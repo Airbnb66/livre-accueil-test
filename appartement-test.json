@@ -1,0 +1,46 @@
+{
+  "nom": "Appartement Test",
+  "wifi": {
+    "reseau": "Appartement_Test",
+    "motDePasse": "Bienvenue2026"
+  },
+  "arrivee": {
+    "horaireArrivee": "à partir de 15 h",
+    "horaireDepart": "avant 11 h",
+    "instructions": "La boîte à clés se trouve à droite de l'entrée.",
+    "codeBoite": "1234"
+  },
+  "parking": {
+    "description": "Une place est réservée à environ deux minutes à pied du logement.",
+    "lienMaps": "https://maps.google.com"
+  },
+  "equipements": [
+    {
+      "icone": "🔥",
+      "titre": "Utiliser la plancha",
+      "texte": "Ouvrez la bouteille de gaz, tournez le bouton, puis utilisez l'allumage central."
+    },
+    {
+      "icone": "📺",
+      "titre": "Utiliser la télévision",
+      "texte": "Allumez la télévision puis ouvrez l'application Molotov."
+    },
+    {
+      "icone": "❄️",
+      "titre": "Climatisation",
+      "texte": "Merci de fermer les fenêtres lorsque la climatisation fonctionne."
+    }
+  ],
+  "adresses": [
+    {
+      "nom": "Restaurant test",
+      "info": "À 5 minutes à pied."
+    },
+    {
+      "nom": "Boulangerie test",
+      "info": "Ouverte dès 7 h."
+    }
+  ],
+  "reglement": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 22 h.",
+  "contactHote": "Contactez votre hôte directement depuis Airbnb."
+}

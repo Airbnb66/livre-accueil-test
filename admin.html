@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Livret d'accueil</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --card:#ffffff; --ink:#232323; --muted:#6b6b66;
+    --accent:#1f6f5c; --accent-soft:#e7f2ef; --line:#e2dfd6; --danger:#b3432b;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 20px 80px;}
+  h1{font-size:22px;margin:0 0 4px;}
+  p.sub{color:var(--muted);margin:0 0 24px;font-size:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;}
+  label{display:block;font-size:13px;color:var(--muted);margin:14px 0 5px;}
+  label:first-child{margin-top:0;}
+  input[type=text], input[type=password], textarea, select{
+    width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;
+    font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  textarea{resize:vertical;min-height:60px;}
+  fieldset{border:1px solid var(--line);border-radius:12px;padding:14px;margin:16px 0;}
+  legend{font-weight:600;font-size:14px;padding:0 6px;}
+  .row{display:flex;gap:10px;}
+  .row > *{flex:1;}
+  button{
+    border:none;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;
+    cursor:pointer;background:var(--accent);color:#fff;
+  }
+  button.secondary{background:var(--accent-soft);color:var(--accent);}
+  button.ghost{background:transparent;color:var(--muted);text-decoration:underline;padding:6px;font-weight:500;}
+  button.danger{background:var(--danger);}
+  button:disabled{opacity:.5;cursor:not-allowed;}
+  .item-block{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;position:relative;}
+  .status{font-size:13px;margin-top:10px;padding:10px 12px;border-radius:8px;display:none;}
+  .status.ok{display:block;background:#e7f2ef;color:var(--accent);}
+  .status.err{display:block;background:#fbe8e3;color:var(--danger);}
+  .muted{color:var(--muted);font-size:13px;}
+  .top-actions{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+  a.link{color:var(--accent);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+const LS_KEY = 'livret_admin_config';
+
+function getConfig(){
+  try{ return JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ return null; }
+}
+function saveConfig(cfg){ localStorage.setItem(LS_KEY, JSON.stringify(cfg)); }
+function clearConfig(){ localStorage.removeItem(LS_KEY); }
+
+function b64EncodeUnicode(str){
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+    (m,p1) => String.fromCharCode('0x' + p1)));
+}
+function b64DecodeUnicode(str){
+  return decodeURIComponent(atob(str).split('').map(c =>
+    '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+}
+
+async function ghRequest(cfg, path, options={}){
+  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+  const res = await fetch(url, {
+    ...options,
+    headers: {
+      'Authorization': `Bearer ${cfg.token}`,
+      'Accept': 'application/vnd.github+json',
+      ...(options.headers||{})
+    }
+  });
+  return res;
+}
+
+async function ghGetJson(cfg, path){
+  const res = await ghRequest(cfg, path);
+  if(res.status === 404) return {data:null, sha:null};
+  if(!res.ok) throw new Error(`Erreur GitHub (${res.status})`);
+  const body = await res.json();
+  const content = b64DecodeUnicode(body.content.replace(/\n/g,''));
+  return {data: JSON.parse(content), sha: body.sha};
+}
+
+async function ghPutJson(cfg, path, dataObj, sha, message){
+  const res = await ghRequest(cfg, path, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message,
+      content: b64EncodeUnicode(JSON.stringify(dataObj, null, 2)),
+      sha: sha || undefined
+    })
+  });
+  if(!res.ok){
+    const err = await res.json().catch(()=>({}));
+    throw new Error(err.message || `Erreur GitHub (${res.status})`);
+  }
+  return res.json();
+}
+
+// ---------- Rendu ----------
+
+function renderSetup(){
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <h1>Configuration</h1>
+    <p class="sub">À faire une seule fois par navigateur. Ces informations restent sur cet appareil, jamais publiées.</p>
+    <div class="card">
+      <label>Propriétaire du repo GitHub (ex : airbnb66)</label>
+      <input type="text" id="cfg-owner" value="airbnb66">
+      <label>Nom du repo (ex : livre-accueil-test)</label>
+      <input type="text" id="cfg-repo" value="livre-accueil-test">
+      <label>Jeton d'accès GitHub (fine-grained personal access token)</label>
+      <input type="password" id="cfg-token" placeholder="github_pat_...">
+      <p class="muted" style="margin-top:10px">
+        Créez ce jeton sur GitHub → Settings → Developer settings → Fine-grained tokens →
+        Generate new token. Limitez-le à ce seul repo, avec la permission
+        <b>Contents: Read and write</b>.
+      </p>
+      <button id="cfg-save" style="margin-top:14px">Enregistrer et continuer</button>
+      <div class="status" id="cfg-status"></div>
+    </div>
+  `;
+  document.getElementById('cfg-save').onclick = async () => {
+    const cfg = {
+      owner: document.getElementById('cfg-owner').value.trim(),
+      repo: document.getElementById('cfg-repo').value.trim(),
+      token: document.getElementById('cfg-token').value.trim()
+    };
+    const statusEl = document.getElementById('cfg-status');
+    if(!cfg.owner || !cfg.repo || !cfg.token){
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Merci de remplir les trois champs.';
+      return;
+    }
+    try{
+      await ghGetJson(cfg, 'data/logements.json');
+      saveConfig(cfg);
+      renderApp();
+    }catch(e){
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Connexion impossible : ' + e.message;
+    }
+  };
+}
+
+async function renderApp(){
+  const cfg = getConfig();
+  const app = document.getElementById('app');
+  app.innerHTML = `<p class="muted">Chargement des logements…</p>`;
+
+  let logements, logementsSha;
+  try{
+    const r = await ghGetJson(cfg, 'data/logements.json');
+    logements = r.data || [];
+    logementsSha = r.sha;
+  }catch(e){
+    app.innerHTML = `<div class="status err" style="display:block">Erreur : ${e.message}</div>
+      <button class="ghost" id="reset-cfg">Changer la configuration</button>`;
+    document.getElementById('reset-cfg').onclick = () => { clearConfig(); renderSetup(); };
+    return;
+  }
+
+  app.innerHTML = `
+    <div class="top-actions">
+      <h1 style="margin:0">Vos logements</h1>
+      <button class="ghost" id="reset-cfg">Déconnexion</button>
+    </div>
+    <div class="card">
+      <label>Choisir un logement à modifier</label>
+      <select id="logement-select">
+        ${logements.map(l => `<option value="${l.id}">${l.nom}</option>`).join('')}
+      </select>
+      <div style="margin-top:14px" class="row">
+        <button class="secondary" id="load-btn">Modifier ce logement</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Ajouter un nouveau logement</label>
+      <div class="row">
+        <input type="text" id="new-id" placeholder="identifiant (ex : appartement-2)">
+        <input type="text" id="new-nom" placeholder="Nom affiché (ex : Appartement 2)">
+      </div>
+      <button style="margin-top:12px" id="add-btn">Créer le logement</button>
+      <p class="muted" style="margin-top:8px">Le lien du livret sera : votresite.github.io/?id=identifiant</p>
+      <div class="status" id="add-status"></div>
+    </div>
+
+    <div id="editor"></div>
+  `;
+
+  document.getElementById('reset-cfg').onclick = () => { clearConfig(); renderSetup(); };
+  document.getElementById('load-btn').onclick = () => {
+    const id = document.getElementById('logement-select').value;
+    renderEditor(cfg, id);
+  };
+
+  document.getElementById('add-btn').onclick = async () => {
+    const id = document.getElementById('new-id').value.trim();
+    const nom = document.getElementById('new-nom').value.trim();
+    const statusEl = document.getElementById('add-status');
+    if(!id || !nom){
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Renseignez un identifiant et un nom.';
+      return;
+    }
+    try{
+      const defaultData = {
+        nom, wifi:{reseau:'', motDePasse:''},
+        arrivee:{horaireArrivee:'', horaireDepart:'', instructions:'', codeBoite:''},
+        parking:{description:'', lienMaps:''},
+        equipements:[], adresses:[], reglement:'', contactHote:''
+      };
+      await ghPutJson(cfg, `data/${id}.json`, defaultData, null, `Ajout du logement ${nom}`);
+      const updated = [...logements, {id, nom}];
+      await ghPutJson(cfg, 'data/logements.json', updated, logementsSha, `Ajout de ${nom} à la liste des logements`);
+      statusEl.className = 'status ok';
+      statusEl.textContent = 'Logement créé. Rechargement…';
+      setTimeout(renderApp, 1000);
+    }catch(e){
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Erreur : ' + e.message;
+    }
+  };
+}
+
+async function renderEditor(cfg, id){
+  const editor = document.getElementById('editor');
+  editor.innerHTML = `<p class="muted">Chargement…</p>`;
+  let data, sha;
+  try{
+    const r = await ghGetJson(cfg, `data/${id}.json`);
+    data = r.data; sha = r.sha;
+  }catch(e){
+    editor.innerHTML = `<div class="status err" style="display:block">Erreur : ${e.message}</div>`;
+    return;
+  }
+
+  const equipHtml = (data.equipements||[]).map((eq,i) => `
+    <div class="item-block" data-idx="${i}">
+      <div class="row">
+        <input type="text" class="eq-icone" placeholder="Emoji" value="${eq.icone||''}" style="max-width:60px">
+        <input type="text" class="eq-titre" placeholder="Titre" value="${eq.titre||''}">
+      </div>
+      <textarea class="eq-texte" placeholder="Instructions">${eq.texte||''}</textarea>
+      <button class="ghost remove-eq">Supprimer</button>
+    </div>`).join('');
+
+  const adrHtml = (data.adresses||[]).map((a,i) => `
+    <div class="item-block" data-idx="${i}">
+      <input type="text" class="adr-nom" placeholder="Nom" value="${a.nom||''}">
+      <textarea class="adr-info" placeholder="Info">${a.info||''}</textarea>
+      <button class="ghost remove-adr">Supprimer</button>
+    </div>`).join('');
+
+  editor.innerHTML = `
+    <div class="card">
+      <h1 style="margin:0 0 4px">${data.nom || id}</h1>
+      <p class="sub">Lien du livret : votresite.github.io/?id=${id}</p>
+
+      <fieldset>
+        <legend>📶 Wi-Fi</legend>
+        <label>Nom du réseau</label>
+        <input type="text" id="f-wifi-reseau" value="${data.wifi?.reseau||''}">
+        <label>Mot de passe</label>
+        <input type="text" id="f-wifi-pass" value="${data.wifi?.motDePasse||''}">
+      </fieldset>
+
+      <fieldset>
+        <legend>🔑 Arrivée / départ</legend>
+        <div class="row">
+          <div>
+            <label>Horaire arrivée</label>
+            <input type="text" id="f-arr-h" value="${data.arrivee?.horaireArrivee||''}">
+          </div>
+          <div>
+            <label>Horaire départ</label>
+            <input type="text" id="f-dep-h" value="${data.arrivee?.horaireDepart||''}">
+          </div>
+        </div>
+        <label>Instructions d'accès</label>
+        <textarea id="f-arr-instr">${data.arrivee?.instructions||''}</textarea>
+        <label>Code boîte à clé</label>
+        <input type="text" id="f-arr-code" value="${data.arrivee?.codeBoite||''}">
+      </fieldset>
+
+      <fieldset>
+        <legend>🚗 Parking</legend>
+        <label>Description</label>
+        <textarea id="f-park-desc">${data.parking?.description||''}</textarea>
+        <label>Lien Google Maps</label>
+        <input type="text" id="f-park-maps" value="${data.parking?.lienMaps||''}">
+      </fieldset>
+
+      <fieldset>
+        <legend>🏠 Équipements</legend>
+        <div id="eq-list">${equipHtml}</div>
+        <button class="secondary" id="add-eq">+ Ajouter un équipement</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>🍽️ Bonnes adresses</legend>
+        <div id="adr-list">${adrHtml}</div>
+        <button class="secondary" id="add-adr">+ Ajouter une adresse</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>📌 Règlement</legend>
+        <textarea id="f-reglement">${data.reglement||''}</textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Besoin d'aide</legend>
+        <textarea id="f-contact">${data.contactHote||''}</textarea>
+      </fieldset>
+
+      <button id="save-btn">Enregistrer les modifications</button>
+      <div class="status" id="save-status"></div>
+    </div>
+  `;
+
+  document.getElementById('add-eq').onclick = () => {
+    document.getElementById('eq-list').insertAdjacentHTML('beforeend', `
+      <div class="item-block">
+        <div class="row">
+          <input type="text" class="eq-icone" placeholder="Emoji" style="max-width:60px">
+          <input type="text" class="eq-titre" placeholder="Titre">
+        </div>
+        <textarea class="eq-texte" placeholder="Instructions"></textarea>
+        <button class="ghost remove-eq">Supprimer</button>
+      </div>`);
+  };
+  document.getElementById('add-adr').onclick = () => {
+    document.getElementById('adr-list').insertAdjacentHTML('beforeend', `
+      <div class="item-block">
+        <input type="text" class="adr-nom" placeholder="Nom">
+        <textarea class="adr-info" placeholder="Info"></textarea>
+        <button class="ghost remove-adr">Supprimer</button>
+      </div>`);
+  };
+  editor.addEventListener('click', (e) => {
+    if(e.target.classList.contains('remove-eq') || e.target.classList.contains('remove-adr')){
+      e.target.closest('.item-block').remove();
+    }
+  });
+
+  document.getElementById('save-btn').onclick = async () => {
+    const statusEl = document.getElementById('save-status');
+    statusEl.className = 'status'; statusEl.style.display='none';
+
+    const equipements = [...document.querySelectorAll('#eq-list .item-block')].map(b => ({
+      icone: b.querySelector('.eq-icone').value,
+      titre: b.querySelector('.eq-titre').value,
+      texte: b.querySelector('.eq-texte').value
+    }));
+    const adresses = [...document.querySelectorAll('#adr-list .item-block')].map(b => ({
+      nom: b.querySelector('.adr-nom').value,
+      info: b.querySelector('.adr-info').value
+    }));
+
+    const updated = {
+      nom: data.nom,
+      wifi: {
+        reseau: document.getElementById('f-wifi-reseau').value,
+        motDePasse: document.getElementById('f-wifi-pass').value
+      },
+      arrivee: {
+        horaireArrivee: document.getElementById('f-arr-h').value,
+        horaireDepart: document.getElementById('f-dep-h').value,
+        instructions: document.getElementById('f-arr-instr').value,
+        codeBoite: document.getElementById('f-arr-code').value
+      },
+      parking: {
+        description: document.getElementById('f-park-desc').value,
+        lienMaps: document.getElementById('f-park-maps').value
+      },
+      equipements, adresses,
+      reglement: document.getElementById('f-reglement').value,
+      contactHote: document.getElementById('f-contact').value
+    };
+
+    try{
+      await ghPutJson(cfg, `data/${id}.json`, updated, sha, `Mise à jour du logement ${id}`);
+      statusEl.className = 'status ok';
+      statusEl.textContent = "Enregistré ✓ — le site sera à jour dans moins d'une minute.";
+    }catch(e){
+      statusEl.className = 'status err';
+      statusEl.textContent = "Erreur lors de l'enregistrement : " + e.message;
+    }
+  };
+}
+
+// ---------- Démarrage ----------
+const existing = getConfig();
+if(existing) renderApp(); else renderSetup();
+</script>
+</body>
+</html>
