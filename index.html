@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livre d'accueil – Appartement test</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <p class="eyebrow">LIVRE D’ACCUEIL</p>
+      <h1>Bienvenue à l’appartement</h1>
+      <p>Tout ce qu’il faut pour profiter du séjour.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card important">
+      <h2>📶 Wi-Fi</h2>
+      <p><strong>Réseau :</strong> Appartement_Test</p>
+      <p><strong>Mot de passe :</strong> <span id="wifiPassword">Bienvenue2026</span></p>
+      <button onclick="copyWifi()">Copier le mot de passe</button>
+    </section>
+
+    <section class="grid">
+      <a class="card link-card" href="#arrivee">
+        <span>🔑</span><strong>Arrivée</strong><small>Accès et clés</small>
+      </a>
+      <a class="card link-card" href="#parking">
+        <span>🚗</span><strong>Parking</strong><small>Emplacement</small>
+      </a>
+      <a class="card link-card" href="#equipements">
+        <span>🏠</span><strong>Équipements</strong><small>Mode d’emploi</small>
+      </a>
+      <a class="card link-card" href="#bonnes-adresses">
+        <span>🍽️</span><strong>Bonnes adresses</strong><small>À proximité</small>
+      </a>
+    </section>
+
+    <section id="arrivee" class="card">
+      <h2>🔑 Arrivée et départ</h2>
+      <p><strong>Arrivée :</strong> à partir de 15 h.</p>
+      <p><strong>Départ :</strong> avant 11 h.</p>
+      <p>La boîte à clés se trouve à droite de l’entrée. Code test : <strong>1234</strong>.</p>
+    </section>
+
+    <section id="parking" class="card">
+      <h2>🚗 Parking</h2>
+      <p>Une place est réservée à environ deux minutes à pied du logement.</p>
+      <a class="button secondary" href="https://maps.google.com" target="_blank" rel="noopener">
+        Ouvrir dans Google Maps
+      </a>
+    </section>
+
+    <section id="equipements" class="card">
+      <h2>🏠 Équipements</h2>
+      <details>
+        <summary>🔥 Utiliser la plancha</summary>
+        <p>Ouvrez la bouteille de gaz, tournez le bouton, puis utilisez l’allumage central.</p>
+      </details>
+      <details>
+        <summary>📺 Utiliser la télévision</summary>
+        <p>Allumez la télévision puis ouvrez l’application Molotov.</p>
+      </details>
+      <details>
+        <summary>❄️ Climatisation</summary>
+        <p>Merci de fermer les fenêtres lorsque la climatisation fonctionne.</p>
+      </details>
+    </section>
+
+    <section id="bonnes-adresses" class="card">
+      <h2>🍽️ Bonnes adresses</h2>
+      <p><strong>Restaurant test</strong><br>À 5 minutes à pied.</p>
+      <p><strong>Boulangerie test</strong><br>Ouverte dès 7 h.</p>
+    </section>
+
+    <section class="card rules">
+      <h2>📌 Règles essentielles</h2>
+      <p>Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 22 h.</p>
+    </section>
+
+    <section class="card contact">
+      <h2>Besoin d’aide ?</h2>
+      <p>Contactez votre hôte directement depuis Airbnb.</p>
+      <a class="button" href="#">Contacter l’hôte</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Merci et excellent séjour ☀️</p>
+  </footer>
+
+  <div id="toast">Mot de passe copié</div>
+  <script src="script.js"></script>
+</body>
+</html>
