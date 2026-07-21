@@ -21,26 +21,30 @@
     width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;
     font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
   }
-  textarea{resize:vertical;min-height:60px;}
+  textarea{resize:vertical;min-height:50px;}
   fieldset{border:1px solid var(--line);border-radius:12px;padding:14px;margin:16px 0;}
   legend{font-weight:600;font-size:14px;padding:0 6px;}
   .row{display:flex;gap:10px;}
   .row > *{flex:1;}
-  button{
-    border:none;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;
-    cursor:pointer;background:var(--accent);color:#fff;
-  }
+  button{border:none;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;background:var(--accent);color:#fff;}
   button.secondary{background:var(--accent-soft);color:var(--accent);}
   button.ghost{background:transparent;color:var(--muted);text-decoration:underline;padding:6px;font-weight:500;}
   button.danger{background:var(--danger);}
   button:disabled{opacity:.5;cursor:not-allowed;}
-  .item-block{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;position:relative;}
+  .item-block{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;}
   .status{font-size:13px;margin-top:10px;padding:10px 12px;border-radius:8px;display:none;}
   .status.ok{display:block;background:#e7f2ef;color:var(--accent);}
   .status.err{display:block;background:#fbe8e3;color:var(--danger);}
   .muted{color:var(--muted);font-size:13px;}
   .top-actions{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
-  a.link{color:var(--accent);font-size:13px;}
+
+  .trilang{border-left:3px solid var(--accent-soft);padding-left:10px;margin-top:6px;}
+  .trilang .tl-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;}
+  .trilang .tl-tag{
+    flex:0 0 30px;font-size:11px;font-weight:700;color:var(--accent);
+    background:var(--accent-soft);border-radius:6px;text-align:center;padding:6px 0;
+  }
+  .trilang .tl-row input, .trilang .tl-row textarea{flex:1;}
 </style>
 </head>
 <body>
@@ -48,35 +52,28 @@
 
 <script>
 const LS_KEY = 'livret_admin_config';
+const LANGS = ['fr','en','es'];
+const LANG_LABEL = {fr:'FR', en:'EN', es:'ES'};
 
-function getConfig(){
-  try{ return JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ return null; }
-}
+function getConfig(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ return null; } }
 function saveConfig(cfg){ localStorage.setItem(LS_KEY, JSON.stringify(cfg)); }
 function clearConfig(){ localStorage.removeItem(LS_KEY); }
 
 function b64EncodeUnicode(str){
-  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
-    (m,p1) => String.fromCharCode('0x' + p1)));
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (m,p1) => String.fromCharCode('0x' + p1)));
 }
 function b64DecodeUnicode(str){
-  return decodeURIComponent(atob(str).split('').map(c =>
-    '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+  return decodeURIComponent(atob(str).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
 }
 
 async function ghRequest(cfg, path, options={}){
   const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
   const res = await fetch(url, {
-    ...options,
-    headers: {
-      'Authorization': `Bearer ${cfg.token}`,
-      'Accept': 'application/vnd.github+json',
-      ...(options.headers||{})
-    }
+    ...options, cache:'no-store',
+    headers: { 'Authorization': `Bearer ${cfg.token}`, 'Accept': 'application/vnd.github+json', ...(options.headers||{}) }
   });
   return res;
 }
-
 async function ghGetJson(cfg, path){
   const res = await ghRequest(cfg, path);
   if(res.status === 404) return {data:null, sha:null};
@@ -85,21 +82,46 @@ async function ghGetJson(cfg, path){
   const content = b64DecodeUnicode(body.content.replace(/\n/g,''));
   return {data: JSON.parse(content), sha: body.sha};
 }
-
 async function ghPutJson(cfg, path, dataObj, sha, message){
   const res = await ghRequest(cfg, path, {
     method: 'PUT',
-    body: JSON.stringify({
-      message,
-      content: b64EncodeUnicode(JSON.stringify(dataObj, null, 2)),
-      sha: sha || undefined
-    })
+    body: JSON.stringify({ message, content: b64EncodeUnicode(JSON.stringify(dataObj, null, 2)), sha: sha || undefined })
   });
   if(!res.ok){
     const err = await res.json().catch(()=>({}));
     throw new Error(err.message || `Erreur GitHub (${res.status})`);
   }
   return res.json();
+}
+
+// ---------- Champs multilingues ----------
+
+// Convertit une valeur existante (chaîne = ancien format, ou objet {fr,en,es}) en objet complet
+function trilangInit(value){
+  if(value == null) return {fr:'', en:'', es:''};
+  if(typeof value === 'string') return {fr: value, en:'', es:''};
+  return {fr: value.fr||'', en: value.en||'', es: value.es||''};
+}
+
+// Génère le HTML d'un bloc de 3 champs (un par langue) pour un champ traduisible
+function trilangField(idPrefix, value, multiline=false){
+  const v = trilangInit(value);
+  const tag = multiline ? 'textarea' : 'input type="text"';
+  const closeTag = multiline ? 'textarea' : 'input';
+  return `<div class="trilang">` + LANGS.map(l => `
+    <div class="tl-row">
+      <span class="tl-tag">${LANG_LABEL[l]}</span>
+      ${multiline
+        ? `<textarea id="${idPrefix}-${l}">${v[l]}</textarea>`
+        : `<input type="text" id="${idPrefix}-${l}" value="${v[l].replace(/"/g,'&quot;')}">`}
+    </div>`).join('') + `</div>`;
+}
+
+// Relit les 3 champs saisis et reconstruit l'objet {fr,en,es}
+function trilangRead(idPrefix){
+  const out = {};
+  LANGS.forEach(l => { out[l] = document.getElementById(`${idPrefix}-${l}`)?.value || ''; });
+  return out;
 }
 
 // ---------- Rendu ----------
@@ -117,9 +139,8 @@ function renderSetup(){
       <label>Jeton d'accès GitHub (fine-grained personal access token)</label>
       <input type="password" id="cfg-token" placeholder="github_pat_...">
       <p class="muted" style="margin-top:10px">
-        Créez ce jeton sur GitHub → Settings → Developer settings → Fine-grained tokens →
-        Generate new token. Limitez-le à ce seul repo, avec la permission
-        <b>Contents: Read and write</b>.
+        GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token.
+        Limitez-le à ce seul repo, avec la permission <b>Contents: Read and write</b>.
       </p>
       <button id="cfg-save" style="margin-top:14px">Enregistrer et continuer</button>
       <div class="status" id="cfg-status"></div>
@@ -133,8 +154,7 @@ function renderSetup(){
     };
     const statusEl = document.getElementById('cfg-status');
     if(!cfg.owner || !cfg.repo || !cfg.token){
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Merci de remplir les trois champs.';
+      statusEl.className = 'status err'; statusEl.textContent = 'Merci de remplir les trois champs.';
       return;
     }
     try{
@@ -142,8 +162,7 @@ function renderSetup(){
       saveConfig(cfg);
       renderApp();
     }catch(e){
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Connexion impossible : ' + e.message;
+      statusEl.className = 'status err'; statusEl.textContent = 'Connexion impossible : ' + e.message;
     }
   };
 }
@@ -205,26 +224,25 @@ async function renderApp(){
     const nom = document.getElementById('new-nom').value.trim();
     const statusEl = document.getElementById('add-status');
     if(!id || !nom){
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Renseignez un identifiant et un nom.';
+      statusEl.className = 'status err'; statusEl.textContent = 'Renseignez un identifiant et un nom.';
       return;
     }
     try{
       const defaultData = {
-        nom, wifi:{reseau:'', motDePasse:''},
-        arrivee:{horaireArrivee:'', horaireDepart:'', instructions:'', codeBoite:''},
-        parking:{description:'', lienMaps:''},
-        equipements:[], adresses:[], reglement:'', contactHote:''
+        nom: {fr:nom, en:'', es:''},
+        wifi:{reseau:'', motDePasse:''},
+        arrivee:{horaireArrivee:{fr:'',en:'',es:''}, horaireDepart:{fr:'',en:'',es:''}, instructions:{fr:'',en:'',es:''}, codeBoite:''},
+        parking:{description:{fr:'',en:'',es:''}, lienMaps:''},
+        equipements:[], adresses:[],
+        reglement:{fr:'',en:'',es:''}, contactHote:{fr:'',en:'',es:''}
       };
       await ghPutJson(cfg, `data/${id}.json`, defaultData, null, `Ajout du logement ${nom}`);
       const updated = [...logements, {id, nom}];
       await ghPutJson(cfg, 'data/logements.json', updated, logementsSha, `Ajout de ${nom} à la liste des logements`);
-      statusEl.className = 'status ok';
-      statusEl.textContent = 'Logement créé. Rechargement…';
+      statusEl.className = 'status ok'; statusEl.textContent = 'Logement créé. Rechargement…';
       setTimeout(renderApp, 1000);
     }catch(e){
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Erreur : ' + e.message;
+      statusEl.className = 'status err'; statusEl.textContent = 'Erreur : ' + e.message;
     }
   };
 }
@@ -243,58 +261,59 @@ async function renderEditor(cfg, id){
 
   const equipHtml = (data.equipements||[]).map((eq,i) => `
     <div class="item-block" data-idx="${i}">
-      <div class="row">
-        <input type="text" class="eq-icone" placeholder="Emoji" value="${eq.icone||''}" style="max-width:60px">
-        <input type="text" class="eq-titre" placeholder="Titre" value="${eq.titre||''}">
-      </div>
-      <textarea class="eq-texte" placeholder="Instructions">${eq.texte||''}</textarea>
-      <button class="ghost remove-eq">Supprimer</button>
+      <input type="text" class="eq-icone" placeholder="Emoji" value="${(eq.icone||'').replace(/"/g,'&quot;')}" style="max-width:60px;margin-bottom:8px">
+      <label style="margin-top:0">Titre</label>
+      ${trilangField(`eq${i}-titre`, eq.titre)}
+      <label>Instructions</label>
+      ${trilangField(`eq${i}-texte`, eq.texte, true)}
+      <button class="ghost remove-eq" style="margin-top:6px">Supprimer</button>
     </div>`).join('');
 
   const adrHtml = (data.adresses||[]).map((a,i) => `
     <div class="item-block" data-idx="${i}">
-      <input type="text" class="adr-nom" placeholder="Nom" value="${a.nom||''}">
-      <textarea class="adr-info" placeholder="Info">${a.info||''}</textarea>
-      <button class="ghost remove-adr">Supprimer</button>
+      <label style="margin-top:0">Nom</label>
+      <input type="text" class="adr-nom" value="${(a.nom||'').replace(/"/g,'&quot;')}">
+      <label>Info</label>
+      ${trilangField(`adr${i}-info`, a.info, true)}
+      <button class="ghost remove-adr" style="margin-top:6px">Supprimer</button>
     </div>`).join('');
 
   editor.innerHTML = `
     <div class="card">
-      <h1 style="margin:0 0 4px">${data.nom || id}</h1>
+      <h1 style="margin:0 0 4px">${trilangInit(data.nom).fr || id}</h1>
       <p class="sub">Lien du livret : votresite.github.io/?id=${id}</p>
 
       <fieldset>
-        <legend>📶 Wi-Fi</legend>
+        <legend>Nom du logement (affiché dans le titre)</legend>
+        ${trilangField('f-nom', data.nom)}
+      </fieldset>
+
+      <fieldset>
+        <legend>📶 Wi-Fi (identique dans les 3 langues)</legend>
         <label>Nom du réseau</label>
-        <input type="text" id="f-wifi-reseau" value="${data.wifi?.reseau||''}">
+        <input type="text" id="f-wifi-reseau" value="${(data.wifi?.reseau||'').replace(/"/g,'&quot;')}">
         <label>Mot de passe</label>
-        <input type="text" id="f-wifi-pass" value="${data.wifi?.motDePasse||''}">
+        <input type="text" id="f-wifi-pass" value="${(data.wifi?.motDePasse||'').replace(/"/g,'&quot;')}">
       </fieldset>
 
       <fieldset>
         <legend>🔑 Arrivée / départ</legend>
-        <div class="row">
-          <div>
-            <label>Horaire arrivée</label>
-            <input type="text" id="f-arr-h" value="${data.arrivee?.horaireArrivee||''}">
-          </div>
-          <div>
-            <label>Horaire départ</label>
-            <input type="text" id="f-dep-h" value="${data.arrivee?.horaireDepart||''}">
-          </div>
-        </div>
+        <label>Horaire arrivée</label>
+        ${trilangField('f-arr-h', data.arrivee?.horaireArrivee)}
+        <label>Horaire départ</label>
+        ${trilangField('f-dep-h', data.arrivee?.horaireDepart)}
         <label>Instructions d'accès</label>
-        <textarea id="f-arr-instr">${data.arrivee?.instructions||''}</textarea>
-        <label>Code boîte à clé</label>
-        <input type="text" id="f-arr-code" value="${data.arrivee?.codeBoite||''}">
+        ${trilangField('f-arr-instr', data.arrivee?.instructions, true)}
+        <label>Code boîte à clé (identique dans les 3 langues)</label>
+        <input type="text" id="f-arr-code" value="${(data.arrivee?.codeBoite||'').replace(/"/g,'&quot;')}">
       </fieldset>
 
       <fieldset>
         <legend>🚗 Parking</legend>
         <label>Description</label>
-        <textarea id="f-park-desc">${data.parking?.description||''}</textarea>
-        <label>Lien Google Maps</label>
-        <input type="text" id="f-park-maps" value="${data.parking?.lienMaps||''}">
+        ${trilangField('f-park-desc', data.parking?.description, true)}
+        <label>Lien Google Maps (identique dans les 3 langues)</label>
+        <input type="text" id="f-park-maps" value="${(data.parking?.lienMaps||'').replace(/"/g,'&quot;')}">
       </fieldset>
 
       <fieldset>
@@ -311,12 +330,12 @@ async function renderEditor(cfg, id){
 
       <fieldset>
         <legend>📌 Règlement</legend>
-        <textarea id="f-reglement">${data.reglement||''}</textarea>
+        ${trilangField('f-reglement', data.reglement, true)}
       </fieldset>
 
       <fieldset>
         <legend>Besoin d'aide</legend>
-        <textarea id="f-contact">${data.contactHote||''}</textarea>
+        ${trilangField('f-contact', data.contactHote, true)}
       </fieldset>
 
       <button id="save-btn">Enregistrer les modifications</button>
@@ -324,24 +343,31 @@ async function renderEditor(cfg, id){
     </div>
   `;
 
+  let eqCounter = (data.equipements||[]).length;
+  let adrCounter = (data.adresses||[]).length;
+
   document.getElementById('add-eq').onclick = () => {
     document.getElementById('eq-list').insertAdjacentHTML('beforeend', `
-      <div class="item-block">
-        <div class="row">
-          <input type="text" class="eq-icone" placeholder="Emoji" style="max-width:60px">
-          <input type="text" class="eq-titre" placeholder="Titre">
-        </div>
-        <textarea class="eq-texte" placeholder="Instructions"></textarea>
-        <button class="ghost remove-eq">Supprimer</button>
+      <div class="item-block" data-idx="${eqCounter}">
+        <input type="text" class="eq-icone" placeholder="Emoji" style="max-width:60px;margin-bottom:8px">
+        <label style="margin-top:0">Titre</label>
+        ${trilangField(`eq${eqCounter}-titre`, null)}
+        <label>Instructions</label>
+        ${trilangField(`eq${eqCounter}-texte`, null, true)}
+        <button class="ghost remove-eq" style="margin-top:6px">Supprimer</button>
       </div>`);
+    eqCounter++;
   };
   document.getElementById('add-adr').onclick = () => {
     document.getElementById('adr-list').insertAdjacentHTML('beforeend', `
-      <div class="item-block">
-        <input type="text" class="adr-nom" placeholder="Nom">
-        <textarea class="adr-info" placeholder="Info"></textarea>
-        <button class="ghost remove-adr">Supprimer</button>
+      <div class="item-block" data-idx="${adrCounter}">
+        <label style="margin-top:0">Nom</label>
+        <input type="text" class="adr-nom">
+        <label>Info</label>
+        ${trilangField(`adr${adrCounter}-info`, null, true)}
+        <button class="ghost remove-adr" style="margin-top:6px">Supprimer</button>
       </div>`);
+    adrCounter++;
   };
   editor.addEventListener('click', (e) => {
     if(e.target.classList.contains('remove-eq') || e.target.classList.contains('remove-adr')){
@@ -353,35 +379,41 @@ async function renderEditor(cfg, id){
     const statusEl = document.getElementById('save-status');
     statusEl.className = 'status'; statusEl.style.display='none';
 
-    const equipements = [...document.querySelectorAll('#eq-list .item-block')].map(b => ({
-      icone: b.querySelector('.eq-icone').value,
-      titre: b.querySelector('.eq-titre').value,
-      texte: b.querySelector('.eq-texte').value
-    }));
-    const adresses = [...document.querySelectorAll('#adr-list .item-block')].map(b => ({
-      nom: b.querySelector('.adr-nom').value,
-      info: b.querySelector('.adr-info').value
-    }));
+    const equipements = [...document.querySelectorAll('#eq-list .item-block')].map(b => {
+      const idx = b.dataset.idx;
+      return {
+        icone: b.querySelector('.eq-icone').value,
+        titre: trilangRead(`eq${idx}-titre`),
+        texte: trilangRead(`eq${idx}-texte`)
+      };
+    });
+    const adresses = [...document.querySelectorAll('#adr-list .item-block')].map(b => {
+      const idx = b.dataset.idx;
+      return {
+        nom: b.querySelector('.adr-nom').value,
+        info: trilangRead(`adr${idx}-info`)
+      };
+    });
 
     const updated = {
-      nom: data.nom,
+      nom: trilangRead('f-nom'),
       wifi: {
         reseau: document.getElementById('f-wifi-reseau').value,
         motDePasse: document.getElementById('f-wifi-pass').value
       },
       arrivee: {
-        horaireArrivee: document.getElementById('f-arr-h').value,
-        horaireDepart: document.getElementById('f-dep-h').value,
-        instructions: document.getElementById('f-arr-instr').value,
+        horaireArrivee: trilangRead('f-arr-h'),
+        horaireDepart: trilangRead('f-dep-h'),
+        instructions: trilangRead('f-arr-instr'),
         codeBoite: document.getElementById('f-arr-code').value
       },
       parking: {
-        description: document.getElementById('f-park-desc').value,
+        description: trilangRead('f-park-desc'),
         lienMaps: document.getElementById('f-park-maps').value
       },
       equipements, adresses,
-      reglement: document.getElementById('f-reglement').value,
-      contactHote: document.getElementById('f-contact').value
+      reglement: trilangRead('f-reglement'),
+      contactHote: trilangRead('f-contact')
     };
 
     try{
