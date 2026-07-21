@@ -1,46 +1,106 @@
 {
-  "nom": "Appartement Test",
+  "nom": {
+    "fr": "Appartement Test",
+    "en": "Test Apartment",
+    "es": "Apartamento de prueba"
+  },
   "wifi": {
     "reseau": "Appartement_Test",
     "motDePasse": "Bienvenue20"
   },
   "arrivee": {
-    "horaireArrivee": "à partir de 15 h",
-    "horaireDepart": "avant 11 h",
-    "instructions": "La boîte à clés se trouve à droite de l'entrée.",
+    "horaireArrivee": {
+      "fr": "à partir de 15 h",
+      "en": "from 3:00 PM",
+      "es": "a partir de las 15:00"
+    },
+    "horaireDepart": {
+      "fr": "avant 11 h",
+      "en": "before 11:00 AM",
+      "es": "antes de las 11:00"
+    },
+    "instructions": {
+      "fr": "La boîte à clés se trouve à droite de l'entrée.",
+      "en": "The key box is located to the right of the entrance.",
+      "es": "La caja de llaves está a la derecha de la entrada."
+    },
     "codeBoite": "1234"
   },
   "parking": {
-    "description": "Une place est réservée à environ deux minutes à pied du logement.",
+    "description": {
+      "fr": "Une place est réservée à environ deux minutes à pied du logement.",
+      "en": "A parking spot is reserved about a two-minute walk from the apartment.",
+      "es": "Hay una plaza reservada a unos dos minutos a pie del apartamento."
+    },
     "lienMaps": "https://maps.google.com"
   },
   "equipements": [
     {
       "icone": "🔥",
-      "titre": "Utiliser la plancha",
-      "texte": "Ouvrez la bouteille de gaz, tournez le bouton, puis utilisez l'allumage central."
+      "titre": {
+        "fr": "Utiliser la plancha",
+        "en": "Using the griddle",
+        "es": "Usar la plancha"
+      },
+      "texte": {
+        "fr": "Ouvrez la bouteille de gaz, tournez le bouton, puis utilisez l'allumage central.",
+        "en": "Open the gas bottle, turn the knob, then use the central ignition.",
+        "es": "Abra la bombona de gas, gire el mando y luego use el encendido central."
+      }
     },
     {
       "icone": "📺",
-      "titre": "Utiliser la télévision",
-      "texte": "Allumez la télévision puis ouvrez l'application Molotov."
+      "titre": {
+        "fr": "Utiliser la télévision",
+        "en": "Using the TV",
+        "es": "Usar el televisor"
+      },
+      "texte": {
+        "fr": "Allumez la télévision puis ouvrez l'application Molotov.",
+        "en": "Turn on the TV, then open the Molotov app.",
+        "es": "Encienda el televisor y luego abra la aplicación Molotov."
+      }
     },
     {
       "icone": "❄️",
-      "titre": "Climatisation",
-      "texte": "Merci de fermer les fenêtres lorsque la climatisation fonctionne."
+      "titre": {
+        "fr": "Climatisation",
+        "en": "Air conditioning",
+        "es": "Aire acondicionado"
+      },
+      "texte": {
+        "fr": "Merci de fermer les fenêtres lorsque la climatisation fonctionne.",
+        "en": "Please close the windows while the air conditioning is running.",
+        "es": "Por favor, cierre las ventanas mientras el aire acondicionado esté funcionando."
+      }
     }
   ],
   "adresses": [
     {
       "nom": "Restaurant test",
-      "info": "À 5 minutes à pied."
+      "info": {
+        "fr": "À 5 minutes à pied.",
+        "en": "5 minutes on foot.",
+        "es": "A 5 minutos a pie."
+      }
     },
     {
       "nom": "Boulangerie test",
-      "info": "Ouverte dès 7 h."
+      "info": {
+        "fr": "Ouverte dès 7 h.",
+        "en": "Open from 7 AM.",
+        "es": "Abierta desde las 7:00."
+      }
     }
   ],
-  "reglement": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 22 h.",
-  "contactHote": "Contactez votre hôte directement depuis Airbnb."
+  "reglement": {
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 22 h.",
+    "en": "Non-smoking apartment · No parties · Please keep noise down after 10 PM.",
+    "es": "Apartamento no fumador · Fiestas prohibidas · Por favor respete el silencio después de las 22:00."
+  },
+  "contactHote": {
+    "fr": "Contactez votre hôte directement depuis Airbnb.",
+    "en": "Contact your host directly through Airbnb.",
+    "es": "Contacte con su anfitrión directamente a través de Airbnb."
+  }
 }
