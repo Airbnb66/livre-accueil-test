@@ -77,7 +77,7 @@ const UI = {
         equipTitle:'🏠 Équipements', adressesTitle:'Bonnes adresses',
         reglementTitle:'📌 Règles essentielles', aideTitle:"Besoin d'aide ?",
         aucuneInfo:'Aucune information pour le moment.', footer:'Merci et excellent séjour ☀️',
-        introuvable:'Livret introuvable pour' },
+        introuvable:'Livret introuvable pour', myMapsLink:'Voir la carte de mes recommandations →' },
   en: { eyebrow:'Welcome book', tagline:'Everything you need for your stay.',
         navArrivee:'Check-in', navParking:'Parking', navEquip:'Appliances', navAdresses:'Nearby',
         wifiTitle:'📶 Wi-Fi', reseau:'Network', copier:'Copy', copie:'Copied ✓',
@@ -86,7 +86,7 @@ const UI = {
         equipTitle:'🏠 Appliances', adressesTitle:'Good addresses',
         reglementTitle:'📌 House rules', aideTitle:'Need help?',
         aucuneInfo:'No information yet.', footer:'Thank you and enjoy your stay ☀️',
-        introuvable:'Welcome book not found for' },
+        introuvable:'Welcome book not found for', myMapsLink:'View my recommendations map →' },
   es: { eyebrow:'Libro de bienvenida', tagline:'Todo lo que necesitas para disfrutar de tu estancia.',
         navArrivee:'Llegada', navParking:'Aparcamiento', navEquip:'Electrodomésticos', navAdresses:'Cerca',
         wifiTitle:'📶 Wi-Fi', reseau:'Red', copier:'Copiar', copie:'Copiado ✓',
@@ -95,7 +95,7 @@ const UI = {
         equipTitle:'🏠 Electrodomésticos', adressesTitle:'Buenas direcciones',
         reglementTitle:'📌 Normas de la casa', aideTitle:'¿Necesitas ayuda?',
         aucuneInfo:'Sin información por el momento.', footer:'Gracias y feliz estancia ☀️',
-        introuvable:'Libro de bienvenida no encontrado para' }
+        introuvable:'Libro de bienvenida no encontrado para', myMapsLink:'Ver mi mapa de recomendaciones →' }
 };
 
 // t(field, lang) : accepte un objet {fr,en,es} OU une simple chaîne (ancien format)
@@ -191,6 +191,7 @@ function render(){
 
     <section id="adresses">
       <h2>${L.adressesTitle}</h2>
+      ${d.lienMyMaps ? `<a class="mapslink" href="${d.lienMyMaps}" target="_blank" rel="noopener">${L.myMapsLink}</a>` : ''}
       ${adresses || `<p class="rules">${L.aucuneInfo}</p>`}
     </section>
 

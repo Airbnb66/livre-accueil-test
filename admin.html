@@ -233,7 +233,7 @@ async function renderApp(){
         wifi:{reseau:'', motDePasse:''},
         arrivee:{horaireArrivee:{fr:'',en:'',es:''}, horaireDepart:{fr:'',en:'',es:''}, instructions:{fr:'',en:'',es:''}, codeBoite:''},
         parking:{description:{fr:'',en:'',es:''}, lienMaps:''},
-        equipements:[], adresses:[],
+        equipements:[], adresses:[], lienMyMaps:'',
         reglement:{fr:'',en:'',es:''}, contactHote:{fr:'',en:'',es:''}
       };
       await ghPutJson(cfg, `data/${id}.json`, defaultData, null, `Ajout du logement ${nom}`);
@@ -333,7 +333,9 @@ async function renderEditor(cfg, id){
 
       <fieldset>
         <legend>Bonnes adresses</legend>
-        <div id="adr-list">${adrHtml}</div>
+        <label>Lien vers ta carte My Maps (optionnel, identique dans les 3 langues)</label>
+        <input type="text" id="f-mymaps" value="${(data.lienMyMaps||'').replace(/"/g,'&quot;')}">
+        <div id="adr-list" style="margin-top:14px">${adrHtml}</div>
         <button class="secondary" id="add-adr">+ Ajouter une adresse</button>
       </fieldset>
 
@@ -425,6 +427,7 @@ async function renderEditor(cfg, id){
         lienMaps: document.getElementById('f-park-maps').value
       },
       equipements, adresses,
+      lienMyMaps: document.getElementById('f-mymaps').value,
       reglement: trilangRead('f-reglement'),
       contactHote: trilangRead('f-contact')
     };
