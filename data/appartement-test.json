@@ -81,7 +81,7 @@
   ],
   "adresses": [
     {
-      "nom": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.693946511340364%2C3.1780059596693144&z=10",
+      "nom": "",
       "info": {
         "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.",
         "en": "Find all our recommendations on an interactive Google Maps.",
@@ -89,6 +89,7 @@
       }
     }
   ],
+  "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.693946511340364%2C3.1780059596693144&z=10",
   "reglement": {
     "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h.",
     "en": "Non-smoking apartment · No parties · Please keep noise down after 8 PM.",
