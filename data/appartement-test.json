@@ -81,11 +81,11 @@
   ],
   "adresses": [
     {
-      "nom": "Restaurant test",
+      "nom": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.693946511340364%2C3.1780059596693144&z=10",
       "info": {
-        "fr": "À 5 minutes à pied.",
-        "en": "5 minutes on foot.",
-        "es": "A 5 minutos a pie."
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.",
+        "en": "Find all our recommendations on an interactive Google Maps.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps."
       }
     }
   ],
