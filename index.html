@@ -74,7 +74,7 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Réseau', copier:'Copier', copie:'Copié ✓',
         arriveeTitle:'🔑 Arrivée et départ', arriveeLabel:'Arrivée', departLabel:'Départ', codeLabel:'Code',
         parkingTitle:'🚗 Parking', mapsLink:'Ouvrir dans Google Maps →',
-        equipTitle:'🏠 Équipements', adressesTitle:'🍽️ Bonnes adresses',
+        equipTitle:'🏠 Équipements', adressesTitle:'Bonnes adresses',
         reglementTitle:'📌 Règles essentielles', aideTitle:"Besoin d'aide ?",
         aucuneInfo:'Aucune information pour le moment.', footer:'Merci et excellent séjour ☀️',
         introuvable:'Livret introuvable pour' },
@@ -83,7 +83,7 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Network', copier:'Copy', copie:'Copied ✓',
         arriveeTitle:'🔑 Check-in and check-out', arriveeLabel:'Check-in', departLabel:'Check-out', codeLabel:'Code',
         parkingTitle:'🚗 Parking', mapsLink:'Open in Google Maps →',
-        equipTitle:'🏠 Appliances', adressesTitle:'🍽️ Good addresses',
+        equipTitle:'🏠 Appliances', adressesTitle:'Good addresses',
         reglementTitle:'📌 House rules', aideTitle:'Need help?',
         aucuneInfo:'No information yet.', footer:'Thank you and enjoy your stay ☀️',
         introuvable:'Welcome book not found for' },
@@ -92,7 +92,7 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Red', copier:'Copiar', copie:'Copiado ✓',
         arriveeTitle:'🔑 Llegada y salida', arriveeLabel:'Llegada', departLabel:'Salida', codeLabel:'Código',
         parkingTitle:'🚗 Aparcamiento', mapsLink:'Abrir en Google Maps →',
-        equipTitle:'🏠 Electrodomésticos', adressesTitle:'🍽️ Buenas direcciones',
+        equipTitle:'🏠 Electrodomésticos', adressesTitle:'Buenas direcciones',
         reglementTitle:'📌 Normas de la casa', aideTitle:'¿Necesitas ayuda?',
         aucuneInfo:'Sin información por el momento.', footer:'Gracias y feliz estancia ☀️',
         introuvable:'Libro de bienvenida no encontrado para' }
@@ -129,7 +129,7 @@ function render(){
 
   const equipements = (d.equipements||[]).map(eq => `
     <div class="item">
-      ${eq.photo ? `<img class="item-photo" src="images/${eq.photo}" alt="">` : ''}
+      ${eq.photo ? `<img class="item-photo" src="images/${eq.photo}" alt="" onerror="this.style.display='none'">` : ''}
       <div class="title">${eq.icone||''} ${t(eq.titre, LANG)}</div>
       <div class="text">${t(eq.texte, LANG)}</div>
     </div>`).join('');
@@ -148,7 +148,7 @@ function render(){
     </div>
 
     <div class="hero">
-      ${d.photoPrincipale ? `<img class="hero-photo" src="images/${d.photoPrincipale}" alt="">` : ''}
+      ${d.photoPrincipale ? `<img class="hero-photo" src="images/${d.photoPrincipale}" alt="" onerror="this.style.display='none'">` : ''}
       <p class="eyebrow">${L.eyebrow}</p>
       <h1>${t(d.nom, LANG) || ''}</h1>
       <p class="sub">${L.tagline}</p>
