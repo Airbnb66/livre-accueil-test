@@ -4,9 +4,10 @@
     "en": "Test Apartment",
     "es": "Apartamento de prueba"
   },
+  "photoPrincipale": "salon",
   "wifi": {
-    "reseau": "Appartement_Test",
-    "motDePasse": "Bienvenue20"
+    "reseau": "Livebox-FF50",
+    "motDePasse": "QK5bRdnD6bHPfzVfth"
   },
   "arrivee": {
     "horaireArrivee": {
@@ -20,19 +21,19 @@
       "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "La boîte à clés se trouve à droite de l'entrée.",
-      "en": "The key box is located to the right of the entrance.",
-      "es": "La caja de llaves está a la derecha de la entrada."
+      "fr": "Les instructions d'arrivée vous seront communiquées le jour de votre arrivée, à partir de 15 h. Elles contiendront toutes les informations nécessaires pour accéder facilement au logement et au parking, ainsi que les codes et les badges nécessaires.",
+      "en": "Your arrival instructions will be sent to you on the day of your check-in, from 3:00 PM onwards. They will include all the information you need to easily access the accommodation and the parking area, including the necessary access codes and badges.",
+      "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información necesaria para acceder fácilmente al alojamiento y al aparcamiento, así como los códigos de acceso y las tarjetas necesarias."
     },
     "codeBoite": "1234"
   },
   "parking": {
     "description": {
-      "fr": "Une place est réservée à environ deux minutes à pied du logement.",
-      "en": "A parking spot is reserved about a two-minute walk from the apartment.",
-      "es": "Hay una plaza reservada a unos dos minutos a pie del apartamento."
+      "fr": "Une place est réservée à environ deux minutes à pied du logement dans la résidence plein sud.",
+      "en": "A reserved parking space is available approximately a two-minute walk from the accommodation, in the Plein Sud residence.",
+      "es": "Hay una plaza de aparcamiento reservada a unos dos minutos a pie del alojamiento, en la residencia Plein Sud."
     },
-    "lienMaps": "https://maps.google.com"
+    "lienMaps": "https://maps.app.goo.gl/HQFSVZFN762VCkLeA"
   },
   "equipements": [
     {
@@ -46,7 +47,8 @@
         "fr": "Ouvrez la bouteille de gaz, tournez le bouton, puis utilisez l'allumage central.",
         "en": "Open the gas bottle, turn the knob, then use the central ignition.",
         "es": "Abra la bombona de gas, gire el mando y luego use el encendido central."
-      }
+      },
+      "photo": ""
     },
     {
       "icone": "📺",
@@ -56,10 +58,11 @@
         "es": "Usar el televisor"
       },
       "texte": {
-        "fr": "Allumez la télévision puis ouvrez l'application Molotov.",
-        "en": "Turn on the TV, then open the Molotov app.",
-        "es": "Encienda el televisor y luego abra la aplicación Molotov."
-      }
+        "fr": "Allumez la télévision puis ouvrez l'application Molotov pour accéder à toutes les chaînes.",
+        "en": "Turn on the TV, then open the Molotov app to access all TV channels.",
+        "es": "Encienda el televisor y, a continuación, abra la aplicación Molotov para acceder a todos los canales de televisión."
+      },
+      "photo": ""
     },
     {
       "icone": "❄️",
@@ -72,7 +75,8 @@
         "fr": "Merci de fermer les fenêtres lorsque la climatisation fonctionne.",
         "en": "Please close the windows while the air conditioning is running.",
         "es": "Por favor, cierre las ventanas mientras el aire acondicionado esté funcionando."
-      }
+      },
+      "photo": ""
     }
   ],
   "adresses": [
@@ -83,20 +87,12 @@
         "en": "5 minutes on foot.",
         "es": "A 5 minutos a pie."
       }
-    },
-    {
-      "nom": "Boulangerie test",
-      "info": {
-        "fr": "Ouverte dès 7 h.",
-        "en": "Open from 7 AM.",
-        "es": "Abierta desde las 7:00."
-      }
     }
   ],
   "reglement": {
-    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 22 h.",
-    "en": "Non-smoking apartment · No parties · Please keep noise down after 10 PM.",
-    "es": "Apartamento no fumador · Fiestas prohibidas · Por favor respete el silencio después de las 22:00."
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h.",
+    "en": "Non-smoking apartment · No parties · Please keep noise down after 8 PM.",
+    "es": "Apartamento no fumador · Fiestas prohibidas · Por favor respete el silencio después de las 20:00."
   },
   "contactHote": {
     "fr": "Contactez votre hôte directement depuis Airbnb.",
