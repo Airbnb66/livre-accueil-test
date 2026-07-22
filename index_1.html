@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<title>Livre d'accueil</title>
+<style>
+  :root{
+    --bg:#fbfaf7; --card:#ffffff; --ink:#232323; --muted:#6b6b66;
+    --accent:#1f6f5c; --accent-soft:#e7f2ef; --line:#e7e4dc; --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:20px 20px 60px;}
+
+  .langbar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:14px;}
+  .langbar button{
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:6px 12px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;
+  }
+  .langbar button.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+
+  .hero{margin-bottom:28px;}
+  .hero-photo{width:100%;height:200px;object-fit:cover;border-radius:var(--radius);margin-bottom:16px;display:block;background:var(--line);}
+  .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 6px;}
+  h1{font-size:28px;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);margin:0;font-size:15px;}
+
+  nav.jump{display:flex;gap:10px;overflow-x:auto;margin:22px 0 26px;padding-bottom:4px;-webkit-overflow-scrolling:touch;}
+  nav.jump a{
+    flex:0 0 auto;display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;
+  }
+  nav.jump a b{font-size:16px;}
+  nav.jump a span{color:var(--muted);font-size:11px;}
+
+  section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px;scroll-margin-top:16px;}
+  section h2{margin:0 0 12px;font-size:17px;display:flex;align-items:center;gap:8px;}
+  .kv{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--line);}
+  .kv:first-of-type{border-top:none;}
+  .kv .label{color:var(--muted);font-size:13px;}
+  .kv .value{font-weight:600;font-size:15px;}
+
+  .wifi-row{display:flex;justify-content:space-between;align-items:center;background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin-top:8px;}
+  .wifi-row .value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px;}
+  button.copy{border:none;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;}
+
+  .code-badge{display:inline-block;margin-top:10px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-family:ui-monospace,monospace;font-size:18px;padding:6px 14px;border-radius:10px;letter-spacing:.05em;}
+
+  .item{padding:12px 0;border-top:1px solid var(--line);}
+  .item:first-child{border-top:none;padding-top:0;}
+  .item-photo{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px;display:block;background:var(--line);}
+  .item .title{font-weight:600;margin-bottom:3px;display:flex;gap:8px;align-items:center;}
+  .item .text{color:var(--muted);font-size:14px;}
+
+  a.mapslink{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+  .rules{font-size:14px;color:var(--muted);}
+  footer{text-align:center;margin-top:32px;color:var(--muted);font-size:13px;}
+  .loading, .error{padding:40px 20px;text-align:center;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><div class="loading">Loading… / Chargement… / Cargando…</div></div>
+
+<script>
+const UI = {
+  fr: { eyebrow:"Livre d'accueil", tagline:"Tout ce qu'il faut pour profiter du séjour.",
+        navArrivee:'Arrivée', navParking:'Parking', navEquip:'Équipements', navAdresses:'Adresses',
+        wifiTitle:'📶 Wi-Fi', reseau:'Réseau', copier:'Copier', copie:'Copié ✓',
+        arriveeTitle:'🔑 Arrivée et départ', arriveeLabel:'Arrivée', departLabel:'Départ', codeLabel:'Code',
+        parkingTitle:'🚗 Parking', mapsLink:'Ouvrir dans Google Maps →',
+        equipTitle:'🏠 Équipements', adressesTitle:'Bonnes adresses',
+        reglementTitle:'📌 Règles essentielles', aideTitle:"Besoin d'aide ?",
+        aucuneInfo:'Aucune information pour le moment.', footer:'Merci et excellent séjour ☀️',
+        introuvable:'Livret introuvable pour' },
+  en: { eyebrow:'Welcome book', tagline:'Everything you need for your stay.',
+        navArrivee:'Check-in', navParking:'Parking', navEquip:'Appliances', navAdresses:'Nearby',
+        wifiTitle:'📶 Wi-Fi', reseau:'Network', copier:'Copy', copie:'Copied ✓',
+        arriveeTitle:'🔑 Check-in and check-out', arriveeLabel:'Check-in', departLabel:'Check-out', codeLabel:'Code',
+        parkingTitle:'🚗 Parking', mapsLink:'Open in Google Maps →',
+        equipTitle:'🏠 Appliances', adressesTitle:'Good addresses',
+        reglementTitle:'📌 House rules', aideTitle:'Need help?',
+        aucuneInfo:'No information yet.', footer:'Thank you and enjoy your stay ☀️',
+        introuvable:'Welcome book not found for' },
+  es: { eyebrow:'Libro de bienvenida', tagline:'Todo lo que necesitas para disfrutar de tu estancia.',
+        navArrivee:'Llegada', navParking:'Aparcamiento', navEquip:'Electrodomésticos', navAdresses:'Cerca',
+        wifiTitle:'📶 Wi-Fi', reseau:'Red', copier:'Copiar', copie:'Copiado ✓',
+        arriveeTitle:'🔑 Llegada y salida', arriveeLabel:'Llegada', departLabel:'Salida', codeLabel:'Código',
+        parkingTitle:'🚗 Aparcamiento', mapsLink:'Abrir en Google Maps →',
+        equipTitle:'🏠 Electrodomésticos', adressesTitle:'Buenas direcciones',
+        reglementTitle:'📌 Normas de la casa', aideTitle:'¿Necesitas ayuda?',
+        aucuneInfo:'Sin información por el momento.', footer:'Gracias y feliz estancia ☀️',
+        introuvable:'Libro de bienvenida no encontrado para' }
+};
+
+// t(field, lang) : accepte un objet {fr,en,es} OU une simple chaîne (ancien format)
+function t(field, lang){
+  if(field == null) return '';
+  if(typeof field === 'string') return field;
+  return field[lang] || field.fr || field.en || field.es || '';
+}
+
+let DATA = null, ID = 'appartement-test', LANG = 'fr';
+
+async function init(){
+  const params = new URLSearchParams(location.search);
+  ID = params.get('id') || 'appartement-test';
+  const app = document.getElementById('app');
+  try{
+    const res = await fetch(`data/${ID}.json`, {cache:'no-store'});
+    if(!res.ok) throw new Error('not found');
+    DATA = await res.json();
+  }catch(e){
+    app.innerHTML = `<div class="error">${UI.fr.introuvable} « ${ID} ».</div>`;
+    return;
+  }
+  render();
+}
+
+function render(){
+  const app = document.getElementById('app');
+  const L = UI[LANG];
+  const d = DATA;
+
+  const equipements = (d.equipements||[]).map(eq => `
+    <div class="item">
+      ${eq.photo ? `<img class="item-photo" src="images/${eq.photo}" alt="" onerror="this.style.display='none'">` : ''}
+      <div class="title">${eq.icone||''} ${t(eq.titre, LANG)}</div>
+      <div class="text">${t(eq.texte, LANG)}</div>
+    </div>`).join('');
+
+  const adresses = (d.adresses||[]).map(a => `
+    <div class="item">
+      <div class="title">${a.nom||''}</div>
+      <div class="text">${t(a.info, LANG)}</div>
+    </div>`).join('');
+
+  app.innerHTML = `
+    <div class="langbar">
+      <button data-lang="fr" class="${LANG==='fr'?'active':''}">FR</button>
+      <button data-lang="en" class="${LANG==='en'?'active':''}">EN</button>
+      <button data-lang="es" class="${LANG==='es'?'active':''}">ES</button>
+    </div>
+
+    <div class="hero">
+      ${d.photoPrincipale ? `<img class="hero-photo" src="images/${d.photoPrincipale}" alt="" onerror="this.style.display='none'">` : ''}
+      <p class="eyebrow">${L.eyebrow}</p>
+      <h1>${t(d.nom, LANG) || ''}</h1>
+      <p class="sub">${L.tagline}</p>
+    </div>
+
+    <nav class="jump">
+      <a href="#arrivee"><b>🔑</b><span>${L.navArrivee}</span></a>
+      <a href="#parking"><b>🚗</b><span>${L.navParking}</span></a>
+      <a href="#equipements"><b>🏠</b><span>${L.navEquip}</span></a>
+      <a href="#adresses"><span>${L.navAdresses}</span></a>
+    </nav>
+
+    <section id="wifi">
+      <h2>${L.wifiTitle}</h2>
+      <div class="kv"><span class="label">${L.reseau}</span><span class="value">${d.wifi?.reseau||''}</span></div>
+      <div class="wifi-row">
+        <span class="value" id="wifi-pass">${d.wifi?.motDePasse||''}</span>
+        <button class="copy" id="copy-btn">${L.copier}</button>
+      </div>
+    </section>
+
+    <section id="arrivee">
+      <h2>${L.arriveeTitle}</h2>
+      <div class="kv"><span class="label">${L.arriveeLabel}</span><span class="value">${t(d.arrivee?.horaireArrivee, LANG)}</span></div>
+      <div class="kv"><span class="label">${L.departLabel}</span><span class="value">${t(d.arrivee?.horaireDepart, LANG)}</span></div>
+      <p class="rules" style="margin-top:10px">${t(d.arrivee?.instructions, LANG)}</p>
+      ${d.arrivee?.codeBoite ? `<div class="code-badge">${L.codeLabel} : ${d.arrivee.codeBoite}</div>` : ''}
+    </section>
+
+    <section id="parking">
+      <h2>${L.parkingTitle}</h2>
+      <p class="rules">${t(d.parking?.description, LANG)}</p>
+      ${d.parking?.lienMaps ? `<a class="mapslink" href="${d.parking.lienMaps}" target="_blank" rel="noopener">${L.mapsLink}</a>` : ''}
+    </section>
+
+    <section id="equipements">
+      <h2>${L.equipTitle}</h2>
+      ${equipements || `<p class="rules">${L.aucuneInfo}</p>`}
+    </section>
+
+    <section id="adresses">
+      <h2>${L.adressesTitle}</h2>
+      ${adresses || `<p class="rules">${L.aucuneInfo}</p>`}
+    </section>
+
+    <section>
+      <h2>${L.reglementTitle}</h2>
+      <p class="rules">${t(d.reglement, LANG)}</p>
+    </section>
+
+    <section>
+      <h2>${L.aideTitle}</h2>
+      <p class="rules">${t(d.contactHote, LANG)}</p>
+    </section>
+
+    <footer>${L.footer}</footer>
+  `;
+
+  document.querySelectorAll('.langbar button').forEach(btn => {
+    btn.addEventListener('click', () => { LANG = btn.dataset.lang; render(); });
+  });
+
+  document.getElementById('copy-btn')?.addEventListener('click', () => {
+    const pass = d.wifi?.motDePasse || '';
+    navigator.clipboard.writeText(pass).then(() => {
+      const btn = document.getElementById('copy-btn');
+      const original = btn.textContent;
+      btn.textContent = L.copie;
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  });
+}
+
+init();
+</script>
+</body>
+</html>
