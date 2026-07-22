@@ -74,8 +74,8 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Réseau', copier:'Copier', copie:'Copié ✓',
         arriveeTitle:'🔑 Arrivée et départ', arriveeLabel:'Arrivée', departLabel:'Départ', codeLabel:'Code',
         parkingTitle:'🚗 Parking', mapsLink:'Ouvrir dans Google Maps →',
-        equipTitle:'🏠 Équipements', adressesTitle:'Bonnes adresses',
-        reglementTitle:'📌 Règles essentielles', aideTitle:"Besoin d'aide ?",
+        equipTitle:'🏠 Équipements', adressesTitle:'📌 Bonnes adresses',
+        reglementTitle:'📋 Règles essentielles', aideTitle:"Besoin d'aide ?",
         aucuneInfo:'Aucune information pour le moment.', footer:'Merci et excellent séjour ☀️',
         introuvable:'Livret introuvable pour', myMapsLink:'Voir la carte de mes recommandations →' },
   en: { eyebrow:'Welcome book', tagline:'Everything you need for your stay.',
@@ -83,8 +83,8 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Network', copier:'Copy', copie:'Copied ✓',
         arriveeTitle:'🔑 Check-in and check-out', arriveeLabel:'Check-in', departLabel:'Check-out', codeLabel:'Code',
         parkingTitle:'🚗 Parking', mapsLink:'Open in Google Maps →',
-        equipTitle:'🏠 Appliances', adressesTitle:'Good addresses',
-        reglementTitle:'📌 House rules', aideTitle:'Need help?',
+        equipTitle:'🏠 Appliances', adressesTitle:'📌 Good addresses',
+        reglementTitle:'📋 House rules', aideTitle:'Need help?',
         aucuneInfo:'No information yet.', footer:'Thank you and enjoy your stay ☀️',
         introuvable:'Welcome book not found for', myMapsLink:'View my recommendations map →' },
   es: { eyebrow:'Libro de bienvenida', tagline:'Todo lo que necesitas para disfrutar de tu estancia.',
@@ -92,8 +92,8 @@ const UI = {
         wifiTitle:'📶 Wi-Fi', reseau:'Red', copier:'Copiar', copie:'Copiado ✓',
         arriveeTitle:'🔑 Llegada y salida', arriveeLabel:'Llegada', departLabel:'Salida', codeLabel:'Código',
         parkingTitle:'🚗 Aparcamiento', mapsLink:'Abrir en Google Maps →',
-        equipTitle:'🏠 Electrodomésticos', adressesTitle:'Buenas direcciones',
-        reglementTitle:'📌 Normas de la casa', aideTitle:'¿Necesitas ayuda?',
+        equipTitle:'🏠 Electrodomésticos', adressesTitle:'📌 Buenas direcciones',
+        reglementTitle:'📋 Normas de la casa', aideTitle:'¿Necesitas ayuda?',
         aucuneInfo:'Sin información por el momento.', footer:'Gracias y feliz estancia ☀️',
         introuvable:'Libro de bienvenida no encontrado para', myMapsLink:'Ver mi mapa de recomendaciones →' }
 };
@@ -176,6 +176,7 @@ function render(){
       <div class="kv"><span class="label">${L.departLabel}</span><span class="value">${t(d.arrivee?.horaireDepart, LANG)}</span></div>
       <p class="rules" style="margin-top:10px">${t(d.arrivee?.instructions, LANG)}</p>
       ${d.arrivee?.codeBoite ? `<div class="code-badge">${L.codeLabel} : ${d.arrivee.codeBoite}</div>` : ''}
+      ${d.arrivee?.lienMapsAdresse ? `<div><a class="mapslink" href="${d.arrivee.lienMapsAdresse}" target="_blank" rel="noopener">${L.mapsLink}</a></div>` : ''}
     </section>
 
     <section id="parking">

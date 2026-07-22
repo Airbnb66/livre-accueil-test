@@ -231,7 +231,7 @@ async function renderApp(){
       const defaultData = {
         nom: {fr:nom, en:'', es:''},
         wifi:{reseau:'', motDePasse:''},
-        arrivee:{horaireArrivee:{fr:'',en:'',es:''}, horaireDepart:{fr:'',en:'',es:''}, instructions:{fr:'',en:'',es:''}, codeBoite:''},
+        arrivee:{horaireArrivee:{fr:'',en:'',es:''}, horaireDepart:{fr:'',en:'',es:''}, instructions:{fr:'',en:'',es:''}, codeBoite:'', lienMapsAdresse:''},
         parking:{description:{fr:'',en:'',es:''}, lienMaps:''},
         equipements:[], adresses:[], lienMyMaps:'',
         reglement:{fr:'',en:'',es:''}, contactHote:{fr:'',en:'',es:''}
@@ -315,6 +315,8 @@ async function renderEditor(cfg, id){
         ${trilangField('f-arr-instr', data.arrivee?.instructions, true)}
         <label>Code boîte à clé (identique dans les 3 langues)</label>
         <input type="text" id="f-arr-code" value="${(data.arrivee?.codeBoite||'').replace(/"/g,'&quot;')}">
+        <label>Lien Google Maps de l'adresse du logement (optionnel)</label>
+        <input type="text" id="f-arr-maps" value="${(data.arrivee?.lienMapsAdresse||'').replace(/"/g,'&quot;')}">
       </fieldset>
 
       <fieldset>
@@ -332,7 +334,7 @@ async function renderEditor(cfg, id){
       </fieldset>
 
       <fieldset>
-        <legend>Bonnes adresses</legend>
+        <legend>📌 Bonnes adresses</legend>
         <label>Lien vers ta carte My Maps (optionnel, identique dans les 3 langues)</label>
         <input type="text" id="f-mymaps" value="${(data.lienMyMaps||'').replace(/"/g,'&quot;')}">
         <div id="adr-list" style="margin-top:14px">${adrHtml}</div>
@@ -420,7 +422,8 @@ async function renderEditor(cfg, id){
         horaireArrivee: trilangRead('f-arr-h'),
         horaireDepart: trilangRead('f-dep-h'),
         instructions: trilangRead('f-arr-instr'),
-        codeBoite: document.getElementById('f-arr-code').value
+        codeBoite: document.getElementById('f-arr-code').value,
+        lienMapsAdresse: document.getElementById('f-arr-maps').value
       },
       parking: {
         description: trilangRead('f-park-desc'),
