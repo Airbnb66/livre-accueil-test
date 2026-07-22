@@ -266,6 +266,8 @@ async function renderEditor(cfg, id){
       ${trilangField(`eq${i}-titre`, eq.titre)}
       <label>Instructions</label>
       ${trilangField(`eq${i}-texte`, eq.texte, true)}
+      <label>Photo (nom du fichier dans /images, optionnel)</label>
+      <input type="text" class="eq-photo" value="${(eq.photo||'').replace(/"/g,'&quot;')}">
       <button class="ghost remove-eq" style="margin-top:6px">Supprimer</button>
     </div>`).join('');
 
@@ -286,6 +288,13 @@ async function renderEditor(cfg, id){
       <fieldset>
         <legend>Nom du logement (affiché dans le titre)</legend>
         ${trilangField('f-nom', data.nom)}
+      </fieldset>
+
+      <fieldset>
+        <legend>🖼️ Photo principale</legend>
+        <label>Nom du fichier dans le dossier /images (ex : salon.jpg)</label>
+        <input type="text" id="f-photo-principale" value="${(data.photoPrincipale||'').replace(/"/g,'&quot;')}">
+        <p class="muted" style="margin-top:6px">Dépose d'abord la photo dans le dossier <b>images</b> de ton repo GitHub, puis écris son nom exact ici.</p>
       </fieldset>
 
       <fieldset>
@@ -354,6 +363,8 @@ async function renderEditor(cfg, id){
         ${trilangField(`eq${eqCounter}-titre`, null)}
         <label>Instructions</label>
         ${trilangField(`eq${eqCounter}-texte`, null, true)}
+        <label>Photo (nom du fichier dans /images, optionnel)</label>
+        <input type="text" class="eq-photo">
         <button class="ghost remove-eq" style="margin-top:6px">Supprimer</button>
       </div>`);
     eqCounter++;
@@ -384,7 +395,8 @@ async function renderEditor(cfg, id){
       return {
         icone: b.querySelector('.eq-icone').value,
         titre: trilangRead(`eq${idx}-titre`),
-        texte: trilangRead(`eq${idx}-texte`)
+        texte: trilangRead(`eq${idx}-texte`),
+        photo: b.querySelector('.eq-photo').value
       };
     });
     const adresses = [...document.querySelectorAll('#adr-list .item-block')].map(b => {
@@ -397,6 +409,7 @@ async function renderEditor(cfg, id){
 
     const updated = {
       nom: trilangRead('f-nom'),
+      photoPrincipale: document.getElementById('f-photo-principale').value,
       wifi: {
         reseau: document.getElementById('f-wifi-reseau').value,
         motDePasse: document.getElementById('f-wifi-pass').value
