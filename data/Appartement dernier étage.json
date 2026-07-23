@@ -4,7 +4,7 @@
     "en": "Accommodation between the city center and the train station",
     "es": "Alojamiento entre el centro de la ciudad y la estación de tren"
   },
-  "photoPrincipale": "",
+  "photoPrincipale": "salondernier.jpg",
   "wifi": {
     "reseau": "Livebox-BF9F",
     "motDePasse": "Tdn5b2ftdtdJN3b2ZN"
@@ -36,7 +36,36 @@
     },
     "lienMaps": ""
   },
-  "equipements": [],
+  "equipements": [
+    {
+      "icone": "🍳​",
+      "titre": {
+        "fr": "Plaque de cuisson",
+        "en": "Cooktop",
+        "es": "Placa de cocina"
+      },
+      "texte": {
+        "fr": "Appuyez sur le bouton Marche/Arrêt, en bas à droite, pour allumer la plaque. Sélectionnez ensuite le foyer souhaité à l’aide des trois symboles situés au-dessus des cinq boutons du bas, puis réglez la puissance avec les boutons – et +.",
+        "en": "Press the Power button at the bottom right to turn on the cooktop. Then select the desired cooking zone using the three symbols located above the five bottom buttons, and adjust the heat level with the – and + buttons.",
+        "es": "Pulse el botón de encendido, situado en la parte inferior derecha, para encender la placa. Después, seleccione la zona de cocción deseada mediante los tres símbolos situados encima de los cinco botones inferiores y ajuste la potencia con los botones – y +."
+      },
+      "photo": "plaquedernier.jpg"
+    },
+    {
+      "icone": "❄️​",
+      "titre": {
+        "fr": "Climatisation",
+        "en": "Air conditioning",
+        "es": "Aire acondicionado"
+      },
+      "texte": {
+        "fr": "Appuyez sur le bouton MODE jusqu’à afficher la fonction souhaitée à l’écran. Pour le froid, sélectionnez COOL (❄️). Pour le chauffage, sélectionnez HEAT (☀️). Réglez ensuite la température avec les flèches centrales de la télécommande. Merci de fermer les fenêtres lorsque la climatisation fonctionne.",
+        "en": "Press the MODE button until the desired function appears on the display. For cooling, select COOL (❄️). For heating, select HEAT (☀️). Then adjust the temperature using the center arrow buttons on the remote control. Please keep the windows closed while the air conditioning is running.",
+        "es": "Pulse el botón MODE hasta que aparezca la función deseada en la pantalla. Para el aire frío, seleccione COOL (❄️). Para la calefacción, seleccione HEAT (☀️). Después, ajuste la temperatura con las flechas centrales del mando a distancia. Por favor, mantenga las ventanas cerradas mientras el aire acondicionado esté funcionando."
+      },
+      "photo": ""
+    }
+  ],
   "adresses": [],
   "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
