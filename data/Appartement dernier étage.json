@@ -1,51 +1,52 @@
 {
   "nom": {
-    "fr": "Appartement dernier étage",
-    "en": "",
-    "es": ""
+    "fr": "Logement entre centre et gare",
+    "en": "Accommodation between the city center and the train station",
+    "es": "Alojamiento entre el centro de la ciudad y la estación de tren"
   },
+  "photoPrincipale": "",
   "wifi": {
-    "reseau": "",
-    "motDePasse": ""
+    "reseau": "Livebox-BF9F",
+    "motDePasse": "Tdn5b2ftdtdJN3b2ZN"
   },
   "arrivee": {
     "horaireArrivee": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "à partir de 15 h",
+      "en": "from 3:00 PM",
+      "es": "a partir de las 15:00"
     },
     "horaireDepart": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "avant 11 h",
+      "en": "before 11:00 AM",
+      "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Les instructions d'arrivée détaillées, ainsi que les codes d'accès, vous seront envoyés le jour de votre arrivée, à partir de 15 h.",
+      "en": "Detailed check-in instructions, including the access codes, will be sent to you on the day of your arrival, from 3:00 PM onwards.",
+      "es": "Las instrucciones detalladas de llegada, junto con los códigos de acceso, se le enviarán el día de su llegada, a partir de las 15:00."
     },
     "codeBoite": "",
-    "lienMapsAdresse": ""
+    "lienMapsAdresse": "https://maps.app.goo.gl/c2z48F8hiJgzJ2mG7"
   },
   "parking": {
     "description": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Des places de parking gratuites sont disponibles devant le logement.",
+      "en": "Free parking spaces are available in front of the accommodation.",
+      "es": "Hay plazas de aparcamiento gratuitas disponibles frente al alojamiento."
     },
     "lienMaps": ""
   },
   "equipements": [],
   "adresses": [],
-  "lienMyMaps": "",
+  "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 4 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
+    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 4 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
+    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 4 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
   },
   "contactHote": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Contactez votre hôte directement depuis Airbnb.",
+    "en": "Contact your host directly through Airbnb.",
+    "es": "Póngase en contacto con su anfitrión directamente a través de Airbnb."
   }
 }
