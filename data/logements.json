@@ -1,3 +1,10 @@
 [
-  { "id": "appartement-test", "nom": "Appartement Test" }
+  {
+    "id": "appartement-test",
+    "nom": "Appartement Test"
+  },
+  {
+    "id": "Appartement dernier étage",
+    "nom": "Appartement dernier étage"
+  }
 ]
