@@ -63,7 +63,21 @@
         "en": "Press the MODE button until the desired function appears on the display. For cooling, select COOL (❄️). For heating, select HEAT (☀️). Then adjust the temperature using the center arrow buttons on the remote control. Please keep the windows closed while the air conditioning is running.",
         "es": "Pulse el botón MODE hasta que aparezca la función deseada en la pantalla. Para el aire frío, seleccione COOL (❄️). Para la calefacción, seleccione HEAT (☀️). Después, ajuste la temperatura con las flechas centrales del mando a distancia. Por favor, mantenga las ventanas cerradas mientras el aire acondicionado esté funcionando."
       },
-      "photo": ""
+      "photo": "climdernier.jpg"
+    },
+    {
+      "icone": "𖣘",
+      "titre": {
+        "fr": "Ventilateur",
+        "en": "Fan",
+        "es": "Ventilador"
+      },
+      "texte": {
+        "fr": "Appuyez d’abord sur l’interrupteur entouré en rouge pour activer le ventilateur de plafond. Utilisez ensuite la télécommande présentée sur la photo pour sélectionner les différentes fonctions et régler la puissance.",
+        "en": "First, press the switch circled in red to activate the ceiling fan. Then use the remote control shown in the photo to select the different functions and adjust the fan speed.",
+        "es": "Primero, pulse el interruptor marcado en rojo para activar el ventilador de techo. Después, utilice el mando a distancia que aparece en la foto para seleccionar las diferentes funciones y ajustar la potencia."
+      },
+      "photo": "ventilateur.jpg"
     }
   ],
   "adresses": [],
