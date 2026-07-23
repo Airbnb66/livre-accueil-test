@@ -98,9 +98,9 @@
     {
       "nom": "",
       "info": {
-        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.",
-        "en": "Find all our recommendations on an interactive Google Maps.",
-        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps."
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.\n\n🟧 Orange : consommation (restaurants, bars, boulangeries, etc.)\n\n🟨 Jaune : commerces (supérettes, boutiques…)\n\n🟩 Vert : activités gratuites ou sans obligation d'achat.\n\n🟦 Bleu : activités payantes.\n\n🟥 Rouge : lieux importants autour du logement.",
+        "en": "Find all our recommendations on an interactive Google Maps.\n\n🟧 Orange: food & drink (restaurants, bars, bakeries, etc.)\n\n🟨 Yellow: shops (grocery stores, boutiques, etc.)\n\n🟩 Green: free activities or places with no purchase required.\n\n🟦 Blue: paid activities.\n\n🟥 Red: important places near the accommodation.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps.\n\n🟧 Naranja: consumo (restaurantes, bares, panaderías, etc.)\n\n🟨 Amarillo: comercios (supermercados, tiendas, etc.)\n\n🟩 Verde: actividades gratuitas o sin obligación de compra.\n\n🟦 Azul: actividades de pago.\n\n🟥 Rojo: lugares importantes cerca del alojamiento."
       }
     }
   ],
