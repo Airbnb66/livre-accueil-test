@@ -25,7 +25,8 @@
       "en": "Your arrival instructions will be sent to you on the day of your check-in, from 3:00 PM onwards. They will include all the information you need to easily access the accommodation and the parking area, including the necessary access codes and badges.",
       "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información necesaria para acceder fácilmente al alojamiento y al aparcamiento, así como los códigos de acceso y las tarjetas necesarias."
     },
-    "codeBoite": ""
+    "codeBoite": "",
+    "lienMapsAdresse": "https://maps.app.goo.gl/2Q5572SjaXBmi7gc7"
   },
   "parking": {
     "description": {
