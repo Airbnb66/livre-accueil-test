@@ -21,9 +21,9 @@
       "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "Les instructions d'arrivée détaillées, ainsi que les codes d'accès, vous seront envoyés le jour de votre arrivée, à partir de 15 h.",
-      "en": "Detailed check-in instructions, including the access codes, will be sent to you on the day of your arrival, from 3:00 PM onwards.",
-      "es": "Las instrucciones detalladas de llegada, junto con los códigos de acceso, se le enviarán el día de su llegada, a partir de las 15:00."
+      "fr": "Les instructions d'arrivée détaillées, ainsi que les codes d'accès, vous seront envoyés le jour de votre arrivée, à partir de 15 h.\nRetrouvez l’adresse exacte du logement grâce au lien Google Maps ci-dessous.",
+      "en": "Detailed check-in instructions, including the access codes, will be sent to you on the day of your arrival, from 3:00 PM onwards.\nFind the exact address of the accommodation using the Google Maps link below.",
+      "es": "Las instrucciones detalladas de llegada, junto con los códigos de acceso, se le enviarán el día de su llegada, a partir de las 15:00.\nEncuentre la dirección exacta del alojamiento mediante el enlace de Google Maps que aparece a continuación."
     },
     "codeBoite": "",
     "lienMapsAdresse": "https://maps.app.goo.gl/c2z48F8hiJgzJ2mG7"
