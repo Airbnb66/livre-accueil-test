@@ -73,11 +73,11 @@
         "es": "Aire acondicionado"
       },
       "texte": {
-        "fr": "Merci de fermer les fenêtres lorsque la climatisation fonctionne.",
-        "en": "Please close the windows while the air conditioning is running.",
-        "es": "Por favor, cierre las ventanas mientras el aire acondicionado esté funcionando."
+        "fr": "Appuyez sur le bouton MODE jusqu'à afficher la fonction souhaitée à l'écran. Pour la climatisation, sélectionnez COOL (❄️). Pour le chauffage, sélectionnez HEAT (☀️). Réglez ensuite la température avec les flèches centrales de la télécommande.\nMerci de fermer les fenêtres lorsque la climatisation fonctionne.",
+        "en": "Press the MODE button until the desired mode appears on the display. For air conditioning, select COOL (❄️). For heating, select HEAT (☀️). Then adjust the temperature using the center arrow buttons on the remote control.\nPlease close the windows while the air conditioning is running.",
+        "es": "Pulse el botón MODE hasta que aparezca el modo deseado en la pantalla. Para el aire acondicionado, seleccione COOL (❄️). Para la calefacción, seleccione HEAT (☀️). Después, ajuste la temperatura con las flechas centrales del mando a distancia.\nPor favor, cierre las ventanas mientras el aire acondicionado esté funcionando."
       },
-      "photo": ""
+      "photo": "clim.jpg"
     },
     {
       "icone": "🛁",
