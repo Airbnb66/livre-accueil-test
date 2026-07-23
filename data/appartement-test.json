@@ -92,6 +92,20 @@
         "es": "Mantenga pulsado el botón SET/POWER (izquierda) durante 3 a 5 segundos para encender la bañera de hidromasaje. Después, utilice las flechas para seleccionar una función y pulse el botón CONFIRMAR (derecha) para activarla. Para mantener la temperatura del agua, los chorros de masaje también deben estar activados.\nNo utilice la segunda opción: corresponde a la función de limpieza O3."
       },
       "photo": "balneo.jpg"
+    },
+    {
+      "icone": "🏊",
+      "titre": {
+        "fr": "Piscine",
+        "en": "Swimming pool",
+        "es": "Piscina"
+      },
+      "texte": {
+        "fr": "Rendez-vous dans le hall d'entrée, puis passez la porte vitrée située après les marches, en face de l'entrée principale. Le digicode se trouve sur votre droite. Saisissez le code fourni dans vos instructions d'arrivée pour accéder à la piscine.",
+        "en": "Go to the entrance hall, then pass through the glass door located after the steps, directly opposite the main entrance. The keypad is on your right. Enter the code provided in your check-in instructions to access the swimming pool.",
+        "es": "Diríjase al vestíbulo de entrada y atraviese la puerta de cristal situada después de las escaleras, frente a la entrada principal. El teclado numérico se encuentra a la derecha. Introduzca el código que figura en las instrucciones de llegada para acceder a la piscina."
+      },
+      "photo": ""
     }
   ],
   "adresses": [
