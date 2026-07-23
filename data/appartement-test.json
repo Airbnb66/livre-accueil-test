@@ -21,9 +21,9 @@
       "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "Les instructions d'arrivée vous seront communiquées le jour de votre arrivée, à partir de 15 h. Elles contiendront toutes les informations nécessaires pour accéder facilement au logement et au parking, ainsi que les codes et les badges nécessaires.",
-      "en": "Your arrival instructions will be sent to you on the day of your check-in, from 3:00 PM onwards. They will include all the information you need to easily access the accommodation and the parking area, including the necessary access codes and badges.",
-      "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información necesaria para acceder fácilmente al alojamiento y al aparcamiento, así como los códigos de acceso y las tarjetas necesarias."
+      "fr": "Les instructions d'arrivée vous seront communiquées le jour de votre arrivée, à partir de 15 h. Elles contiendront toutes les informations nécessaires pour accéder facilement au logement et au parking, ainsi que les codes et les badges nécessaires.\nPour accéder à l'adresse du logement, veuillez cliquer sur le lien ci-dessous.",
+      "en": "Your arrival instructions will be sent to you on the day of your check-in, from 3:00 PM onwards. They will include all the information you need to easily access the accommodation and the parking area, including the necessary access codes and badges.\nTo view the accommodation address, please click the link below.",
+      "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información necesaria para acceder fácilmente al alojamiento y al aparcamiento, así como los códigos de acceso y las tarjetas necesarias.\nPara acceder a la dirección del alojamiento, haga clic en el enlace que aparece a continuación."
     },
     "codeBoite": "",
     "lienMapsAdresse": "https://maps.app.goo.gl/2Q5572SjaXBmi7gc7"
@@ -87,9 +87,9 @@
         "es": "Jacuzzi"
       },
       "texte": {
-        "fr": "Maintenez le bouton SET/POWER à gauche pendant 3 à 5 secondes pour allumer la balnéo. Utilisez ensuite les flèches pour choisir une fonction, puis appuyez sur le bouton tout à droite pour valider. N’utilisez pas la 2ᵉ option : nettoyage O3. Pour maintenir la température, les jets massants doivent aussi être activés.",
-        "en": "Press and hold the SET/POWER button (left) for 3–5 seconds to turn on the spa bath. Then use the arrow buttons to select a function and press the CONFIRM button (right) to activate it. Do not use the second option: it is the O3 cleaning function. To keep the water warm, the massage jets must also be turned on.",
-        "es": "Mantenga pulsado el botón SET/POWER (izquierda) durante 3 a 5 segundos para encender la bañera de hidromasaje. Después, utilice las flechas para seleccionar una función y pulse el botón CONFIRMAR (derecha) para activarla. No utilice la segunda opción: corresponde a la función de limpieza O3. Para mantener la temperatura del agua, los chorros de masaje también deben estar activados."
+        "fr": "Maintenez le bouton SET/POWER à gauche pendant 3 à 5 secondes pour allumer la balnéo. Utilisez ensuite les flèches pour choisir une fonction, puis appuyez sur le bouton tout à droite pour valider. Pour maintenir la température, les jets massants doivent aussi être activés.\nN’utilisez pas la 2ᵉ option : nettoyage O3.",
+        "en": "Press and hold the SET/POWER button (left) for 3–5 seconds to turn on the spa bath. Then use the arrow buttons to select a function and press the CONFIRM button (right) to activate it.  To keep the water warm, the massage jets must also be turned on.\nDo not use the second option: it is the O3 cleaning function.",
+        "es": "Mantenga pulsado el botón SET/POWER (izquierda) durante 3 a 5 segundos para encender la bañera de hidromasaje. Después, utilice las flechas para seleccionar una función y pulse el botón CONFIRMAR (derecha) para activarla. Para mantener la temperatura del agua, los chorros de masaje también deben estar activados.\nNo utilice la segunda opción: corresponde a la función de limpieza O3."
       },
       "photo": "balneo.jpg"
     }
