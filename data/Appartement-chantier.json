@@ -64,6 +64,76 @@
         "es": "Para utilizar la placa de cocina, pulse el botón de encendido/apagado (marcado con un círculo rojo) hasta que se ilumine. A continuación, seleccione la zona de cocción que desea utilizar pulsando el botón marcado con un círculo verde y ajuste la potencia con los botones + y −.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
       },
       "photo": ""
+    },
+    {
+      "icone": "🛁",
+      "titre": {
+        "fr": "Jacuzzi",
+        "en": "Jacuzzi",
+        "es": "Jacuzzi"
+      },
+      "texte": {
+        "fr": "Maintenez le bouton SET/POWER à gauche pendant 3 à 5 secondes pour allumer la balnéo. Utilisez ensuite les flèches pour choisir une fonction, puis appuyez sur le bouton tout à droite pour valider. Pour maintenir la température, les jets massants doivent aussi être activés.\nN’utilisez pas la 2ᵉ option : nettoyage O3.",
+        "en": "Press and hold the SET/POWER button (left) for 3–5 seconds to turn on the spa bath. Then use the arrow buttons to select a function and press the CONFIRM button (right) to activate it.  To keep the water warm, the massage jets must also be turned on.\nDo not use the second option: it is the O3 cleaning function.",
+        "es": "Mantenga pulsado el botón SET/POWER (izquierda) durante 3 a 5 segundos para encender la bañera de hidromasaje. Después, utilice las flechas para seleccionar una función y pulse el botón CONFIRMAR (derecha) para activarla. Para mantener la temperatura del agua, los chorros de masaje también deben estar activados.\nNo utilice la segunda opción: corresponde a la función de limpieza O3."
+      },
+      "photo": ""
+    },
+    {
+      "icone": "🧖",
+      "titre": {
+        "fr": "Sauna",
+        "en": "Sauna",
+        "es": "Sauna"
+      },
+      "texte": {
+        "fr": "Le bouton de gauche permet de régler la durée de fonctionnement et celui de droite la température. Si vous souhaitez verser de l'eau sur les pierres, faites-le doucement et en petite quantité. L'utilisation d'une serviette est obligatoire. Nous recommandons des séances de 20 minutes maximum. Le sauna est déconseillé aux femmes enceintes et aux personnes fragiles ou souffrant de problèmes de santé.",
+        "en": "The left dial adjusts the operating time, and the right dial controls the temperature. If you wish to pour water onto the stones, do so gently and in small amounts. A towel must always be used inside the sauna. We recommend sessions of no more than 20 minutes. The sauna is not recommended for pregnant women or people with health conditions.",
+        "es": "El mando izquierdo ajusta el tiempo de funcionamiento y el derecho la temperatura. Si desea verter agua sobre las piedras, hágalo lentamente y en pequeñas cantidades. Es obligatorio utilizar una toalla dentro de la sauna. Recomendamos sesiones de un máximo de 20 minutos. No se recomienda el uso de la sauna a mujeres embarazadas ni a personas con problemas de salud."
+      },
+      "photo": ""
+    },
+    {
+      "icone": "❄️",
+      "titre": {
+        "fr": "Climatisation",
+        "en": "Air conditioning",
+        "es": "Aire acondicionado"
+      },
+      "texte": {
+        "fr": "La climatisation est réversible et permet de produire du froid ou du chaud. Appuyez sur le bouton MODE de la télécommande pour sélectionner le mode souhaité (❄️ flocon = froid, ☀️ soleil = chaud), puis réglez la température à l'aide des boutons + et −. Les trois climatiseurs de la maison doivent impérativement être réglés sur le même mode (chaud ou froid) : il n'est pas possible d'utiliser le chauffage sur l'un et la climatisation sur un autre. Enfin, merci de garder les fenêtres fermées lorsque la climatisation est en fonctionnement.",
+        "en": "The air conditioning system provides both cooling and heating. Press the MODE button on the remote control to select the desired mode (❄️ snowflake = cooling, ☀️ sun = heating), then adjust the temperature using the + and − buttons. All three air conditioning units in the house must be set to the same mode (heating or cooling). One unit cannot cool while another heats. Please also keep all windows closed whenever the air conditioning is in use.",
+        "es": "El aire acondicionado es reversible y puede proporcionar frío o calor. Pulse el botón MODE del mando a distancia para seleccionar el modo deseado (❄️ copo de nieve = frío, ☀️ sol = calor) y ajuste la temperatura con los botones + y −. Los tres aparatos de aire acondicionado de la vivienda deben estar configurados en el mismo modo (frío o calor). No es posible que uno enfríe mientras otro caliente. Además, mantenga las ventanas cerradas mientras el aire acondicionado esté funcionando."
+      },
+      "photo": ""
+    },
+    {
+      "icone": "📺",
+      "titre": {
+        "fr": "Utiliser la télévision",
+        "en": "Using the TV",
+        "es": "Usar el televisor"
+      },
+      "texte": {
+        "fr": "Allumez la télévision, puis ouvrez l'application Molotov pour accéder aux chaînes de télévision classiques. Les services de streaming Netflix, Amazon Prime Video et Disney+ sont également mis à votre disposition.",
+        "en": "Turn on the TV, then open the Molotov app to watch standard TV channels. Streaming services including Netflix, Amazon Prime Video, and Disney+ are also available for your use.",
+        "es": "Encienda el televisor y abra la aplicación Molotov para acceder a los canales de televisión tradicionales. También tiene a su disposición los servicios de streaming Netflix, Amazon Prime Video y Disney+."
+      },
+      "photo": ""
+    },
+    {
+      "icone": "🪟",
+      "titre": {
+        "fr": "Vitre opacifiante",
+        "en": "Smart Privacy Glass",
+        "es": "Cristal opacificable"
+      },
+      "texte": {
+        "fr": "Une télécommande est mise à votre disposition. Appuyez sur le bouton A pour opacifier ou rendre transparente la vitre. Cette fonction permet de préserver votre intimité tout en profitant de la lumière naturelle apportée par les fenêtres de toit.",
+        "en": "A remote control is provided. Press the A button to switch the glass between opaque and transparent. This feature allows you to maintain your privacy while still enjoying the natural light coming through the roof windows.",
+        "es": "Se proporciona un mando a distancia. Pulse el botón A para hacer que el cristal sea opaco o transparente. Esta función le permite mantener su privacidad mientras disfruta de la luz natural que entra por las ventanas de techo."
+      },
+      "photo": ""
     }
   ],
   "adresses": [
