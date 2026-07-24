@@ -45,9 +45,9 @@
         "es": "Placa de cocina"
       },
       "texte": {
-        "fr": "Appuyez sur le bouton Marche/Arrêt, en bas à droite, pour allumer la plaque. Sélectionnez ensuite le foyer souhaité à l’aide des trois symboles situés au-dessus des cinq boutons du bas, puis réglez la puissance avec les boutons – et +.",
-        "en": "Press the Power button at the bottom right to turn on the cooktop. Then select the desired cooking zone using the three symbols located above the five bottom buttons, and adjust the heat level with the – and + buttons.",
-        "es": "Pulse el botón de encendido, situado en la parte inferior derecha, para encender la placa. Después, seleccione la zona de cocción deseada mediante los tres símbolos situados encima de los cinco botones inferiores y ajuste la potencia con los botones – y +."
+        "fr": "Appuyez sur le bouton Marche/Arrêt, en bas à droite, pour allumer la plaque. Sélectionnez ensuite le foyer souhaité à l’aide des trois symboles situés au-dessus des cinq boutons du bas, puis réglez la puissance avec les boutons – et +.\nSi la plaque est verrouillée, retirez toute casserole et essuyez tout liquide présent sur la surface. Maintenez ensuite le bouton cadenas, en bas à gauche, pour la déverrouiller. La plaque ne pourra pas être déverrouillée si elle détecte un objet ou du liquide.",
+        "en": "Press the Power button at the bottom right to turn on the cooktop. Then select the desired cooking zone using the three symbols located above the five bottom buttons, and adjust the heat level with the – and + buttons.\nIf the cooktop is locked, remove any cookware and wipe away any liquid from the surface. Then press and hold the lock button at the bottom left to unlock it. The cooktop cannot be unlocked if it detects an object or liquid.",
+        "es": "Pulse el botón de encendido, situado en la parte inferior derecha, para encender la placa. Después, seleccione la zona de cocción deseada mediante los tres símbolos situados encima de los cinco botones inferiores y ajuste la potencia con los botones – y +.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
       },
       "photo": "plaquedernier.jpg"
     },
@@ -80,7 +80,16 @@
       "photo": "ventilateur.jpg"
     }
   ],
-  "adresses": [],
+  "adresses": [
+    {
+      "nom": "",
+      "info": {
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.\n\n🟧 Orange : consommation (restaurants, bars, boulangeries, etc.)\n\n🟨 Jaune : commerces (supérettes, boutiques…)\n\n🟩 Vert : activités gratuites ou sans obligation d'achat.\n\n🟦 Bleu : activités payantes.\n\n🟥 Rouge : lieux importants autour du logement.",
+        "en": "Find all our recommendations on an interactive Google Maps.\n\n🟧 Orange: food & drink (restaurants, bars, bakeries, etc.)\n\n🟨 Yellow: shops (grocery stores, boutiques, etc.)\n\n🟩 Green: free activities or places with no purchase required.\n\n🟦 Blue: paid activities.\n\n🟥 Red: important places near the accommodation.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps.\n\n🟧 Naranja: consumo (restaurantes, bares, panaderías, etc.)\n\n🟨 Amarillo: comercios (supermercados, tiendas, etc.)\n\n🟩 Verde: actividades gratuitas o sin obligación de compra.\n\n🟦 Azul: actividades de pago.\n\n🟥 Rojo: lugares importantes cerca del alojamiento."
+      }
+    }
+  ],
   "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
     "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 4 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
