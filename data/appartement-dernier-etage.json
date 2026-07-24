@@ -78,6 +78,20 @@
         "es": "Primero, pulse el interruptor marcado en rojo para activar el ventilador de techo. Después, utilice el mando a distancia que aparece en la foto para seleccionar las diferentes funciones y ajustar la potencia."
       },
       "photo": "ventilateur.jpg"
+    },
+    {
+      "icone": "📺",
+      "titre": {
+        "fr": "Utiliser la télévision",
+        "en": "Using the TV",
+        "es": "Using the TV"
+      },
+      "texte": {
+        "fr": "Allumez la télévision puis ouvrez l'application Molotov pour accéder à toutes les chaînes.",
+        "en": "Turn on the TV, then open the Molotov app to access all TV channels.",
+        "es": "Encienda el televisor y, a continuación, abra la aplicación Molotov para acceder a todos los canales de televisión."
+      },
+      "photo": ""
     }
   ],
   "adresses": [
