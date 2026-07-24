@@ -106,6 +106,20 @@
         "es": "Diríjase al vestíbulo de entrada y atraviese la puerta de cristal situada después de las escaleras, frente a la entrada principal. El teclado numérico se encuentra a la derecha. Introduzca el código que figura en las instrucciones de llegada para acceder a la piscina."
       },
       "photo": ""
+    },
+    {
+      "icone": "🍳​",
+      "titre": {
+        "fr": "Plaque de cuisson",
+        "en": "Cooktop",
+        "es": "Placa de cocina"
+      },
+      "texte": {
+        "fr": "Allumez la plaque en appuyant sur le bouton d’alimentation entouré en rouge, en bas à droite. Sélectionnez ensuite le foyer souhaité avec le bouton entouré en vert, puis réglez la puissance à l’aide des boutons – et + situés juste en dessous.\nSi la plaque est verrouillée, retirez toute casserole et essuyez tout liquide présent sur la surface. Maintenez ensuite le bouton cadenas, en bas à gauche, pour la déverrouiller. La plaque ne pourra pas être déverrouillée si elle détecte un objet ou du liquide.",
+        "en": "Turn on the cooktop by pressing the power button circled in red at the bottom right. Then select the desired cooking zone using the button circled in green, and adjust the heat level with the – and + buttons just below.\nIf the cooktop is locked, remove any cookware and wipe away any liquid from the surface. Then press and hold the lock button at the bottom left to unlock it. The cooktop cannot be unlocked if it detects an object or liquid.",
+        "es": "Encienda la placa pulsando el botón de encendido marcado en rojo, situado en la parte inferior derecha. Después, seleccione la zona de cocción deseada con el botón marcado en verde y ajuste la potencia con los botones – y + situados justo debajo.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
+      },
+      "photo": "plaquecanet.jpg"
     }
   ],
   "adresses": [
