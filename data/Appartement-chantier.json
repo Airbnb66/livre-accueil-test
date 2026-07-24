@@ -4,7 +4,7 @@
     "en": "Accommodation with a spa bath, sauna, terrace, and garage.",
     "es": "Alojamiento con bañera de hidromasaje, sauna, terraza y garaje."
   },
-  "photoPrincipale": "",
+  "photoPrincipale": "salonchantier.jpg",
   "wifi": {
     "reseau": "Livebox-07C0",
     "motDePasse": "4PGsfh3iePwd5cbquy"
@@ -36,7 +36,36 @@
     },
     "lienMaps": ""
   },
-  "equipements": [],
+  "equipements": [
+    {
+      "icone": "",
+      "titre": {
+        "fr": "Fenêtre de toit",
+        "en": "Roof window",
+        "es": "Ventana de techo"
+      },
+      "texte": {
+        "fr": "Pour éviter tout dommage en cas d'intempéries, merci de toujours fermer la fenêtre de toit dès que vous quittez le logement, même pour une courte absence. Pensez également à vérifier qu'elle est bien fermée avant votre départ définitif.",
+        "en": "To prevent any damage caused by bad weather, please always close the roof window whenever you leave the property, even if you are only going out for a short time. Please also make sure it is fully closed before your final departure.",
+        "es": "Para evitar cualquier daño causado por las inclemencias del tiempo, cierre siempre la ventana de techo cada vez que salga del alojamiento, aunque sea por un corto período de tiempo. Asegúrese también de que esté completamente cerrada antes de su salida definitiva."
+      },
+      "photo": ""
+    },
+    {
+      "icone": "🍳​",
+      "titre": {
+        "fr": "Plaque de cuisson",
+        "en": "Cooktop",
+        "es": "Placa de cocina"
+      },
+      "texte": {
+        "fr": "Pour utiliser la plaque de cuisson, appuyez sur le bouton Marche/Arrêt (entouré en rouge) jusqu'à ce qu'il s'allume. Sélectionnez ensuite le foyer souhaité en appuyant sur le bouton entouré en vert, puis réglez la puissance de chauffe à l'aide des boutons + et −.\nSi la plaque est verrouillée, retirez toute casserole et essuyez tout liquide présent sur la surface. Maintenez ensuite le bouton cadenas, en bas à gauche, pour la déverrouiller. La plaque ne pourra pas être déverrouillée si elle détecte un objet ou du liquide.",
+        "en": "To use the cooktop, press the Power button (circled in red) until it lights up. Then select the cooking zone you want to use by pressing the button circled in green, and adjust the heat level using the + and − buttons.\nIf the cooktop is locked, remove any cookware and wipe away any liquid from the surface. Then press and hold the lock button at the bottom left to unlock it. The cooktop cannot be unlocked if it detects an object or liquid.",
+        "es": "Para utilizar la placa de cocina, pulse el botón de encendido/apagado (marcado con un círculo rojo) hasta que se ilumine. A continuación, seleccione la zona de cocción que desea utilizar pulsando el botón marcado con un círculo verde y ajuste la potencia con los botones + y −.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
+      },
+      "photo": ""
+    }
+  ],
   "adresses": [
     {
       "nom": "",
