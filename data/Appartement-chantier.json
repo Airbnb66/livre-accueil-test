@@ -1,0 +1,51 @@
+{
+  "nom": {
+    "fr": "Logement avec balnéo, sauna, terrasse et garage",
+    "en": "",
+    "es": ""
+  },
+  "wifi": {
+    "reseau": "",
+    "motDePasse": ""
+  },
+  "arrivee": {
+    "horaireArrivee": {
+      "fr": "",
+      "en": "",
+      "es": ""
+    },
+    "horaireDepart": {
+      "fr": "",
+      "en": "",
+      "es": ""
+    },
+    "instructions": {
+      "fr": "",
+      "en": "",
+      "es": ""
+    },
+    "codeBoite": "",
+    "lienMapsAdresse": ""
+  },
+  "parking": {
+    "description": {
+      "fr": "",
+      "en": "",
+      "es": ""
+    },
+    "lienMaps": ""
+  },
+  "equipements": [],
+  "adresses": [],
+  "lienMyMaps": "",
+  "reglement": {
+    "fr": "",
+    "en": "",
+    "es": ""
+  },
+  "contactHote": {
+    "fr": "",
+    "en": "",
+    "es": ""
+  }
+}
