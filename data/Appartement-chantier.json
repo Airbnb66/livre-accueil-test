@@ -1,51 +1,61 @@
 {
   "nom": {
     "fr": "Logement avec balnéo, sauna, terrasse et garage",
-    "en": "",
-    "es": ""
+    "en": "Accommodation with a spa bath, sauna, terrace, and garage.",
+    "es": "Alojamiento con bañera de hidromasaje, sauna, terraza y garaje."
   },
+  "photoPrincipale": "",
   "wifi": {
-    "reseau": "",
-    "motDePasse": ""
+    "reseau": "Livebox-07C0",
+    "motDePasse": "4PGsfh3iePwd5cbquy"
   },
   "arrivee": {
     "horaireArrivee": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "à partir de 15 h",
+      "en": "from 3:00 PM",
+      "es": "a partir de las 15:00"
     },
     "horaireDepart": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "avant 11 h",
+      "en": "before 11:00 AM",
+      "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Les instructions d'arrivée vous seront communiquées le jour de votre arrivée, à partir de 15 h. Elles contiendront toutes les informations nécessaires pour accéder facilement au logement ainsi que les codes.\nPour accéder à l'adresse du logement, veuillez cliquer sur le lien ci-dessous.",
+      "en": "Your check-in instructions will be sent to you on the day of your arrival, from 3:00 PM onwards. They will contain all the information and access codes needed to enter the accommodation easily.\nTo view the exact address of the accommodation, please click the link below.",
+      "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información y los códigos de acceso necesarios para entrar fácilmente en el alojamiento.\nPara consultar la dirección exacta del alojamiento, haga clic en el enlace que aparece a continuación."
     },
     "codeBoite": "",
-    "lienMapsAdresse": ""
+    "lienMapsAdresse": "https://maps.app.goo.gl/cYSJsUtKeuDnCGMR9"
   },
   "parking": {
     "description": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Un grand garage privatif pouvant accueillir jusqu’à trois véhicules est disponible à l’adresse du logement. Attention : les véhicules de grande taille, comme les minivans 9 places, ne peuvent pas y entrer. Deux ou trois manœuvres peuvent être nécessaires pour garer un véhicule de taille standard.",
+      "en": "A large private garage for up to three vehicles is available at the accommodation. Please note that large vehicles, such as 9-seater minivans, cannot enter. Two or three manoeuvres may be required to park a standard-sized vehicle.",
+      "es": "Hay un amplio garaje privado con capacidad para tres vehículos en el alojamiento. Tenga en cuenta que los vehículos grandes, como los monovolúmenes de 9 plazas, no pueden entrar. Es posible que tenga que realizar dos o tres maniobras para aparcar un vehículo de tamaño estándar."
     },
     "lienMaps": ""
   },
   "equipements": [],
-  "adresses": [],
-  "lienMyMaps": "",
+  "adresses": [
+    {
+      "nom": "",
+      "info": {
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.\n\n🟧 Orange : consommation (restaurants, bars, boulangeries, etc.)\n\n🟨 Jaune : commerces (supérettes, boutiques…)\n\n🟩 Vert : activités gratuites ou sans obligation d'achat.\n\n🟦 Bleu : activités payantes.\n\n🟥 Rouge : lieux importants autour du logement.",
+        "en": "Find all our recommendations on an interactive Google Maps.\n\n🟧 Orange: food & drink (restaurants, bars, bakeries, etc.)\n\n🟨 Yellow: shops (grocery stores, boutiques, etc.)\n\n🟩 Green: free activities or places with no purchase required.\n\n🟦 Blue: paid activities.\n\n🟥 Red: important places near the accommodation.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps.\n\n🟧 Naranja: consumo (restaurantes, bares, panaderías, etc.)\n\n🟨 Amarillo: comercios (supermercados, tiendas, etc.)\n\n🟩 Verde: actividades gratuitas o sin obligación de compra.\n\n🟦 Azul: actividades de pago.\n\n🟥 Rojo: lugares importantes cerca del alojamiento."
+      }
+    }
+  ],
+  "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 6 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
+    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 6 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
+    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 6 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
   },
   "contactHote": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Contactez votre hôte directement depuis Airbnb.",
+    "en": "Contact your host directly through Airbnb.",
+    "es": "Contacte con su anfitrión directamente a través de Airbnb."
   }
 }
