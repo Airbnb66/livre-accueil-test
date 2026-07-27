@@ -38,7 +38,7 @@
   },
   "equipements": [
     {
-      "icone": "",
+      "icone": "🪟",
       "titre": {
         "fr": "Fenêtre de toit",
         "en": "Roof window",
@@ -59,9 +59,9 @@
         "es": "Placa de cocina"
       },
       "texte": {
-        "fr": "Pour utiliser la plaque de cuisson, appuyez sur le bouton Marche/Arrêt (entouré en rouge) jusqu'à ce qu'il s'allume. Sélectionnez ensuite le foyer souhaité en appuyant sur le bouton entouré en vert, puis réglez la puissance de chauffe à l'aide des boutons + et −.\nSi la plaque est verrouillée, retirez toute casserole et essuyez tout liquide présent sur la surface. Maintenez ensuite le bouton cadenas, en bas à gauche, pour la déverrouiller. La plaque ne pourra pas être déverrouillée si elle détecte un objet ou du liquide.",
-        "en": "To use the cooktop, press the Power button (circled in red) until it lights up. Then select the cooking zone you want to use by pressing the button circled in green, and adjust the heat level using the + and − buttons.\nIf the cooktop is locked, remove any cookware and wipe away any liquid from the surface. Then press and hold the lock button at the bottom left to unlock it. The cooktop cannot be unlocked if it detects an object or liquid.",
-        "es": "Para utilizar la placa de cocina, pulse el botón de encendido/apagado (marcado con un círculo rojo) hasta que se ilumine. A continuación, seleccione la zona de cocción que desea utilizar pulsando el botón marcado con un círculo verde y ajuste la potencia con los botones + y −.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
+        "fr": "Pour utiliser la plaque de cuisson, maintenez le bouton Marche/Arrêt — entouré en rouge — jusqu’à ce que la plaque s’allume. Sélectionnez ensuite le foyer souhaité à l’aide du bouton entouré en vert, puis réglez la puissance de chauffe avec les boutons + et −.\nSi la plaque est verrouillée, retirez toutes les casseroles et essuyez soigneusement tout liquide présent sur sa surface. Maintenez ensuite le doigt sur le symbole de la clé, situé juste à droite du bouton Marche/Arrêt, jusqu’au déverrouillage de la plaque. Celle-ci ne pourra pas être déverrouillée si elle détecte encore un objet ou du liquide sur sa surface.",
+        "en": "To use the cooktop, press and hold the Power button — circled in red — until the cooktop switches on. Then select the desired cooking zone using the button circled in green, and adjust the heat level with the + and − buttons.\nIf the cooktop is locked, remove all pots and pans and carefully wipe away any liquid from its surface. Then press and hold the key symbol, located immediately to the right of the Power button, until the cooktop unlocks. It cannot be unlocked if it still detects an object or liquid on its surface.",
+        "es": "Para utilizar la placa de cocina, mantenga pulsado el botón de encendido/apagado —rodeado en rojo— hasta que la placa se encienda. A continuación, seleccione la zona de cocción deseada pulsando el botón rodeado en verde y ajuste la potencia con los botones + y −.\nSi la placa está bloqueada, retire todas las ollas y sartenes y seque cuidadosamente cualquier líquido presente en la superficie. A continuación, mantenga pulsado el símbolo de la llave, situado justo a la derecha del botón de encendido/apagado, hasta que la placa se desbloquee. La placa no podrá desbloquearse si detecta algún objeto o líquido sobre su superficie."
       },
       "photo": "plaquechantier.jpg"
     },
