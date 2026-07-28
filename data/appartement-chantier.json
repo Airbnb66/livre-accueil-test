@@ -45,9 +45,9 @@
         "es": "Ventana de techo"
       },
       "texte": {
-        "fr": "Pour éviter tout dommage en cas d'intempéries, merci de toujours fermer la fenêtre de toit dès que vous quittez le logement, même pour une courte absence. Pensez également à vérifier qu'elle est bien fermée avant votre départ définitif.",
-        "en": "To prevent any damage caused by bad weather, please always close the roof window whenever you leave the property, even if you are only going out for a short time. Please also make sure it is fully closed before your final departure.",
-        "es": "Para evitar cualquier daño causado por las inclemencias del tiempo, cierre siempre la ventana de techo cada vez que salga del alojamiento, aunque sea por un corto período de tiempo. Asegúrese también de que esté completamente cerrada antes de su salida definitiva."
+        "fr": "Pour ouvrir ou fermer le volet de la fenêtre de toit du salon, utilisez la télécommande de gauche. Appuyez sur la flèche ▲ pour ouvrir le volet ou sur la flèche ▼ pour le fermer. Les fenêtres de toit des chambres sont, quant à elles, équipées de stores occultants manuels. Afin d'éviter tout dommage en cas d'intempéries, veillez à toujours fermer les fenêtres de toit lorsque vous quittez le logement, même pour une courte absence. Avant votre départ définitif, pensez également à vérifier que les fenêtres de toit des chambres sont toutes bien fermées.",
+        "en": "To open or close the living room roof window blind, use the left-hand remote control. Press the ▲ button to open the blind or the ▼ button to close it. The bedroom roof windows are fitted with manual blackout blinds. To help prevent damage in bad weather, always make sure the roof windows are closed whenever you leave the property, even for a short time. Before your final departure, please also check that all the bedroom roof windows are securely closed.",
+        "es": "Para abrir o cerrar la persiana de la ventana de techo del salón, utilice el mando a distancia situado a la izquierda. Pulse la flecha ▲ para abrir la persiana o la flecha ▼ para cerrarla. Las ventanas de techo de los dormitorios están equipadas con estores opacos manuales. Para evitar cualquier daño en caso de mal tiempo, asegúrese de cerrar siempre las ventanas de techo cuando salga del alojamiento, aunque sea por un corto periodo de tiempo. Antes de su salida definitiva, compruebe también que todas las ventanas de techo de los dormitorios estén correctamente cerradas."
       },
       "photo": "velux.jpg"
     },
@@ -105,7 +105,7 @@
         "en": "The air conditioning system provides both cooling and heating. Press the MODE button on the remote control to select the desired mode (❄️ snowflake = cooling, ☀️ sun = heating), then adjust the temperature using the + and − buttons. All three air conditioning units in the house must be set to the same mode (heating or cooling). One unit cannot cool while another heats. Please also keep all windows closed whenever the air conditioning is in use.",
         "es": "El aire acondicionado es reversible y puede proporcionar frío o calor. Pulse el botón MODE del mando a distancia para seleccionar el modo deseado (❄️ copo de nieve = frío, ☀️ sol = calor) y ajuste la temperatura con los botones + y −. Los tres aparatos de aire acondicionado de la vivienda deben estar configurados en el mismo modo (frío o calor). No es posible que uno enfríe mientras otro caliente. Además, mantenga las ventanas cerradas mientras el aire acondicionado esté funcionando."
       },
-      "photo": ""
+      "photo": "climchantier.jpg"
     },
     {
       "icone": "📺",
