@@ -120,6 +120,20 @@
         "es": "Encienda la placa pulsando el botón de encendido marcado en rojo, situado en la parte inferior derecha. Después, seleccione la zona de cocción deseada con el botón marcado en verde y ajuste la potencia con los botones – y + situados justo debajo.\nSi la placa está bloqueada, retire cualquier recipiente y limpie todo el líquido de la superficie. Después, mantenga pulsado el botón del candado, situado en la parte inferior izquierda, para desbloquearla. La placa no podrá desbloquearse si detecta algún objeto o líquido."
       },
       "photo": "plaquecanet.jpg"
+    },
+    {
+      "icone": "☀️",
+      "titre": {
+        "fr": "Store banne",
+        "en": "Retractable awning",
+        "es": "Toldo retráctil"
+      },
+      "texte": {
+        "fr": "Pour déployer le store banne, utilisez la perche mise à votre disposition. Insérez le crochet de la perche dans l'anneau entouré en rouge, situé sur le côté du store (photo du milieu), puis tournez la perche comme une manivelle jusqu'à ce que le store soit entièrement déployé.",
+        "en": "To extend the retractable awning, use the provided pole. Insert the hook of the pole into the ring marked in red, located on the side of the awning (middle photo), then rotate the pole like a crank until the awning is fully extended.",
+        "es": "Para desplegar el toldo, utilice la pértiga proporcionada. Introduzca el gancho de la pértiga en la anilla marcada en rojo, situada en el lateral del toldo (foto central), y gire la pértiga como si fuera una manivela hasta desplegar completamente el toldo."
+      },
+      "photo": "storebanne.jpg"
     }
   ],
   "adresses": [
