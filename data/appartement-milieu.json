@@ -94,7 +94,16 @@
       "photo": "portemilieu.jpg"
     }
   ],
-  "adresses": [],
+  "adresses": [
+    {
+      "nom": "",
+      "info": {
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.\n\n🟧 Orange : consommation (restaurants, bars, boulangeries, etc.)\n\n🟨 Jaune : commerces (supérettes, boutiques…)\n\n🟩 Vert : activités gratuites ou sans obligation d'achat.\n\n🟦 Bleu : activités payantes.\n\n🟥 Rouge : lieux importants autour du logement.",
+        "en": "Find all our recommendations on an interactive Google Maps.\n\n🟧 Orange: food & drink (restaurants, bars, bakeries, etc.)\n\n🟨 Yellow: shops (grocery stores, boutiques, etc.)\n\n🟩 Green: free activities or places with no purchase required.\n\n🟦 Blue: paid activities.\n\n🟥 Red: important places near the accommodation.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps.\n\n🟧 Naranja: consumo (restaurantes, bares, panaderías, etc.)\n\n🟨 Amarillo: comercios (supermercados, tiendas, etc.)\n\n🟩 Verde: actividades gratuitas o sin obligación de compra.\n\n🟦 Azul: actividades de pago.\n\n🟥 Rojo: lugares importantes cerca del alojamiento."
+      }
+    }
+  ],
   "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
     "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 4 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
