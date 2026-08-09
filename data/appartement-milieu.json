@@ -92,6 +92,20 @@
         "es": "Para cerrar con llave la puerta de entrada, primero levante la manilla hacia arriba y luego gire la llave. La puerta no se podrá cerrar con llave si no levanta primero la manilla."
       },
       "photo": "portemilieu.jpg"
+    },
+    {
+      "icone": "📺",
+      "titre": {
+        "fr": "Utiliser la télévision",
+        "en": "Using the TV",
+        "es": "Usar el televisor"
+      },
+      "texte": {
+        "fr": "Allumez la télévision puis ouvrez l'application Molotov pour accéder à toutes les chaînes.",
+        "en": "Turn on the TV, then open the Molotov app to access all TV channels.",
+        "es": "Encienda el televisor y, a continuación, abra la aplicación Molotov para acceder a todos los canales de televisión."
+      },
+      "photo": ""
     }
   ],
   "adresses": [
@@ -106,9 +120,9 @@
   ],
   "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
-    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 4 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
-    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 4 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
-    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 4 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 6 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
+    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 6 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
+    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 6 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
   },
   "contactHote": {
     "fr": "Contactez votre hôte directement depuis Airbnb.",
