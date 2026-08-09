@@ -1,51 +1,109 @@
 {
   "nom": {
-    "fr": "Appartement milieu",
-    "en": "",
-    "es": ""
+    "fr": "Appartement avec balnéo entre la gare et le centre",
+    "en": "Apartment with whirlpool bath between the train station and city center",
+    "es": "Apartamento con bañera de hidromasaje entre la estación y el centro"
   },
+  "photoPrincipale": "salonmilieu.jpg",
   "wifi": {
-    "reseau": "",
-    "motDePasse": ""
+    "reseau": "Livebox-BF9F",
+    "motDePasse": "Tdn5b2ftdtdJN3b2ZN"
   },
   "arrivee": {
     "horaireArrivee": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "à partir de 15 h",
+      "en": "from 3:00 PM",
+      "es": "a partir de las 15:00"
     },
     "horaireDepart": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "avant 11 h",
+      "en": "before 11:00 AM",
+      "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Les instructions d'arrivée détaillées, ainsi que les codes d'accès, vous seront envoyés le jour de votre arrivée, à partir de 15 h.\nRetrouvez l’adresse exacte du logement grâce au lien Google Maps ci-dessous.",
+      "en": "Detailed check-in instructions, including the access codes, will be sent to you on the day of your arrival, from 3:00 PM onwards.\nFind the exact address of the accommodation using the Google Maps link below.",
+      "es": "Las instrucciones detalladas de llegada, junto con los códigos de acceso, se le enviarán el día de su llegada, a partir de las 15:00.\nEncuentre la dirección exacta del alojamiento mediante el enlace de Google Maps que aparece a continuación."
     },
     "codeBoite": "",
-    "lienMapsAdresse": ""
+    "lienMapsAdresse": "https://maps.app.goo.gl/c2z48F8hiJgzJ2mG7"
   },
   "parking": {
     "description": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Des places de parking gratuites sont disponibles devant le logement.",
+      "en": "Free parking spaces are available in front of the accommodation.",
+      "es": "Hay plazas de aparcamiento gratuitas disponibles frente al alojamiento."
     },
     "lienMaps": ""
   },
-  "equipements": [],
+  "equipements": [
+    {
+      "icone": "🍳​",
+      "titre": {
+        "fr": "Plaque de cuisson",
+        "en": "Cooktop",
+        "es": "Placa de cocina"
+      },
+      "texte": {
+        "fr": "Pour utiliser la plaque à induction, appuyez d’abord sur le bouton marche/arrêt entouré en rouge. Sélectionnez ensuite la zone de cuisson souhaitée à l’aide du bouton entouré en vert, puis réglez la puissance avec les boutons + et –.",
+        "en": "To use the induction hob, first press the on/off button circled in red. Then select the cooking zone you wish to use with the button circled in green, and adjust the power level using the + and – buttons.",
+        "es": "Para utilizar la placa de inducción, pulse primero el botón de encendido/apagado rodeado en rojo. A continuación, seleccione la zona de cocción que desea utilizar con el botón rodeado en verde y ajuste la potencia con los botones + y –."
+      },
+      "photo": "plaquemilieu.jpg"
+    },
+    {
+      "icone": "🛁",
+      "titre": {
+        "fr": "Balnéo",
+        "en": "Hot tub",
+        "es": "Bañera de hidromasaje"
+      },
+      "texte": {
+        "fr": "De gauche à droite :\n\n* Le premier bouton permet d’ouvrir et de régler l’eau chaude.\n* Le deuxième permet de choisir entre le pommeau de douche et le bec de la baignoire.\n* Le troisième permet d’ouvrir et de régler l’eau froide.\n* Le bouton tout à droite permet d’activer et de régler les jets massants.",
+        "en": "From left to right:\n\n* The first control turns on and adjusts the hot water.\n* The second lets you choose between the shower head and the bathtub spout.\n* The third turns on and adjusts the cold water.\n* The control on the far right activates and adjusts the massage jets.",
+        "es": "De izquierda a derecha:\n\n* El primer mando permite abrir y regular el agua caliente.\n* El segundo permite elegir entre la ducha de mano y el caño de la bañera.\n* El tercero permite abrir y regular el agua fría.\n* El mando situado en el extremo derecho permite activar y regular los chorros de masaje."
+      },
+      "photo": "balneomilieu.jpg"
+    },
+    {
+      "icone": "❄️​",
+      "titre": {
+        "fr": "Climatisation",
+        "en": "Air conditioning",
+        "es": "Aire acondicionado"
+      },
+      "texte": {
+        "fr": "Appuyez sur le bouton MODE jusqu’à afficher la fonction souhaitée à l’écran. Pour le froid, sélectionnez COOL (❄️). Pour le chauffage, sélectionnez HEAT (☀️). Réglez ensuite la température avec les flèches centrales de la télécommande. Merci de fermer les fenêtres lorsque la climatisation fonctionne.",
+        "en": "Press the MODE button until the desired function appears on the display. For cooling, select COOL (❄️). For heating, select HEAT (☀️). Then adjust the temperature using the center arrow buttons on the remote control. Please keep the windows closed while the air conditioning is running.",
+        "es": "Pulse el botón MODE hasta que aparezca la función deseada en la pantalla. Para el aire frío, seleccione COOL (❄️). Para la calefacción, seleccione HEAT (☀️). Después, ajuste la temperatura con las flechas centrales del mando a distancia. Por favor, mantenga las ventanas cerradas mientras el aire acondicionado esté funcionando."
+      },
+      "photo": "climmilieu.jpg"
+    },
+    {
+      "icone": "🚪",
+      "titre": {
+        "fr": "Fermeture de la porte d'entrée",
+        "en": "Locking the entrance door",
+        "es": "Cierre de la puerta de entrada"
+      },
+      "texte": {
+        "fr": "Pour verrouiller la porte d’entrée, relevez d’abord la poignée vers le haut, puis tournez la clé. Sans relever la poignée, la porte ne pourra pas être verrouillée.",
+        "en": "To lock the entrance door, first lift the handle upwards, then turn the key. The door cannot be locked unless the handle is lifted first.",
+        "es": "Para cerrar con llave la puerta de entrada, primero levante la manilla hacia arriba y luego gire la llave. La puerta no se podrá cerrar con llave si no levanta primero la manilla."
+      },
+      "photo": "portemilieu.jpg"
+    }
+  ],
   "adresses": [],
-  "lienMyMaps": "",
+  "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 4 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
+    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 4 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
+    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 4 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
   },
   "contactHote": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Contactez votre hôte directement depuis Airbnb.",
+    "en": "Contact your host directly through Airbnb.",
+    "es": "Póngase en contacto con su anfitrión directamente a través de Airbnb."
   }
 }
