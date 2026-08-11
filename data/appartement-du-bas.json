@@ -1,51 +1,146 @@
 {
   "nom": {
     "fr": "Logement avec piscine, jacuzzi, parking privé, jardin et fauteuils massants",
-    "en": "",
-    "es": ""
+    "en": "Accommodation with swimming pool, hot tub, private parking, garden and massage chairs",
+    "es": "Alojamiento con piscina, jacuzzi, aparcamiento privado, jardín y sillones de masaje"
   },
+  "photoPrincipale": "salondubas.jpg",
   "wifi": {
-    "reseau": "",
-    "motDePasse": ""
+    "reseau": "Livebox-89BC",
+    "motDePasse": "bFPnH2b9b7JtN6Z67z"
   },
   "arrivee": {
     "horaireArrivee": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "à partir de 15 h",
+      "en": "from 3:00 PM",
+      "es": "a partir de las 15:00"
     },
     "horaireDepart": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "avant 11 h",
+      "en": "before 11:00 AM",
+      "es": "antes de las 11:00"
     },
     "instructions": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Les instructions d'arrivée vous seront communiquées le jour de votre arrivée, à partir de 15 h. Elles contiendront toutes les informations nécessaires pour accéder facilement au logement ainsi que les codes.\nPour accéder à l'adresse du logement, veuillez cliquer sur le lien ci-dessous.",
+      "en": "Your check-in instructions will be sent to you on the day of your arrival, from 3:00 PM onwards. They will contain all the information and access codes needed to enter the accommodation easily.\nTo view the exact address of the accommodation, please click the link below.",
+      "es": "Las instrucciones de llegada se le enviarán el día de su llegada, a partir de las 15:00. Incluirán toda la información y los códigos de acceso necesarios para entrar fácilmente en el alojamiento.\nPara consultar la dirección exacta del alojamiento, haga clic en el enlace que aparece a continuación."
     },
     "codeBoite": "",
-    "lienMapsAdresse": ""
+    "lienMapsAdresse": "https://maps.app.goo.gl/uoC8XiLvshxm8pPj9"
   },
   "parking": {
     "description": {
-      "fr": "",
-      "en": "",
-      "es": ""
+      "fr": "Le stationnement est gratuit dans la rue, juste devant la maison. Vous pouvez également garer votre véhicule dans l’allée privative du jardin. Merci de ne pas stationner sur le ponton.",
+      "en": "Free parking is available on the street, directly in front of the house. You can also park your vehicle in the private driveway. Please do not park on the bridge.",
+      "es": "Hay aparcamiento gratuito en la calle, justo delante de la casa. También puede aparcar su vehículo en la entrada privada del jardín. Por favor, no aparque sobre el puente."
     },
     "lienMaps": ""
   },
-  "equipements": [],
-  "adresses": [],
-  "lienMyMaps": "",
+  "equipements": [
+    {
+      "icone": "🛁",
+      "titre": {
+        "fr": "Balnéo",
+        "en": "Whirlpool bath",
+        "es": "Bañera de hidromasaje"
+      },
+      "texte": {
+        "fr": "Comme indiqué sur la photo, la balnéo dispose de 3 boutons à gauche et de 3 commandes à droite.\n\nBoutons de gauche :\n\n💡 Gauche : allumer la lumière / chromothérapie.\n💦 Milieu : activer les jets massants.\n🫧 Droite : activer les bulles.\n\nCommandes de droite :\n\n🔥 Gauche : régler l’eau chaude.\n🚿 Milieu : couper l’eau ou sélectionner la sortie d’eau (douchette ou bec de la balnéo).\n❄️ Droite : régler l’eau froide.",
+        "en": "As shown in the photo, the whirlpool bath has 3 buttons on the left and 3 controls on the right.\n\nLeft buttons:\n\n💡 Left: turn on the light / chromotherapy.\n💦 Middle: activate the massage jets.\n🫧 Right: activate the bubbles.\n\nRight controls:\n\n🔥 Left: adjust the hot water.\n🚿 Middle: turn off the water or select the water outlet (hand shower or bathtub spout).\n❄️ Right: adjust the cold water.",
+        "es": "Como se muestra en la foto, la bañera de hidromasaje dispone de 3 botones a la izquierda y 3 mandos a la derecha.\n\nBotones de la izquierda:\n\n💡 Izquierda: encender la luz / cromoterapia.\n💦 Centro: activar los chorros de masaje.\n🫧 Derecha: activar las burbujas.\n\nMandos de la derecha:\n\n🔥 Izquierda: regular el agua caliente.\n🚿 Centro: cortar el agua o seleccionar la salida de agua (ducha de mano o caño de la bañera).\n❄️ Derecha: regular el agua fría."
+      },
+      "photo": "balneobas.jpg"
+    },
+    {
+      "icone": "♨️",
+      "titre": {
+        "fr": "Utilisation du jacuzzi",
+        "en": "Using the hot tub",
+        "es": "Uso del jacuzzi"
+      },
+      "texte": {
+        "fr": "🔓 Pour déverrouiller le jacuzzi, maintenez le bouton cadenas en haut à gauche, entouré en rouge, pendant 3 secondes.\n🫧 Pour activer les bulles, appuyez sur le bouton situé tout en bas, entouré en vert.\n🌡️ Pour régler la température, utilisez les flèches haut et bas situées à droite.",
+        "en": "🔓 To unlock the hot tub, press and hold the lock button at the top left, circled in red, for 3 seconds.\n🫧 To activate the bubbles, press the bottom button, circled in green.\n🌡️ To adjust the temperature, use the up and down arrows on the right.",
+        "es": "🔓 Para desbloquear el jacuzzi, mantenga pulsado el botón del candado situado arriba a la izquierda, rodeado en rojo, durante 3 segundos.\n🫧 Para activar las burbujas, pulse el botón situado en la parte inferior, rodeado en verde.\n🌡️ Para ajustar la temperatura, utilice las flechas arriba y abajo situadas a la derecha."
+      },
+      "photo": "jacuzzibas.jpg"
+    },
+    {
+      "icone": "🔥",
+      "titre": {
+        "fr": "Barbecue",
+        "en": "Barbecue",
+        "es": "Barbacoa"
+      },
+      "texte": {
+        "fr": "Un barbecue est mis gratuitement à votre disposition. Merci de le nettoyer après chaque utilisation. Le charbon et les aliments ne sont pas fournis : pensez à apporter le nécessaire pour votre barbecue.",
+        "en": "A barbecue is available for you to use free of charge. Please clean it after each use. Charcoal and food are not provided, so please bring everything you need for your barbecue.",
+        "es": "Hay una barbacoa disponible de forma gratuita. Por favor, límpiela después de cada uso. El carbón y los alimentos no están incluidos, así que recuerde traer todo lo necesario para su barbacoa."
+      },
+      "photo": "barbecuebas.jpg"
+    },
+    {
+      "icone": "🏊",
+      "titre": {
+        "fr": "Piscine",
+        "en": "Swimming pool",
+        "es": "Piscina"
+      },
+      "texte": {
+        "fr": "La piscine est mise gratuitement à votre disposition. La baignade n’est pas surveillée et s’effectue sous votre entière responsabilité. Les enfants doivent rester sous la surveillance constante et active d’un adulte, notamment lorsqu’ils se trouvent à proximité de la piscine. Merci de rester vigilants et de respecter les règles de sécurité. Pour les séjours de plusieurs jours, merci de vérifier régulièrement le niveau d’eau. Avec la chaleur et les baignades, celui-ci peut rapidement baisser. L’eau doit toujours dépasser la vis centrale indiquée par la flèche rouge sur la photo. Si nécessaire, ajoutez de l’eau. La piscine n’est pas chauffée.",
+        "en": "The swimming pool is available for you to use free of charge. Swimming is unsupervised and entirely at your own responsibility. Children must remain under the constant and active supervision of an adult, especially when near the pool. Please remain vigilant and follow all safety rules. For stays of several days, please check the water level regularly, as heat and swimming can cause it to drop quickly. The water must always remain above the central screw indicated by the red arrow in the photo. Add water if necessary. The swimming pool is not heated.",
+        "es": "La piscina está a su disposición de forma gratuita. El baño no está vigilado y se realiza bajo su entera responsabilidad. Los niños deben permanecer bajo la supervisión constante y activa de un adulto, especialmente cuando se encuentren cerca de la piscina. Por favor, manténganse atentos y respeten las normas de seguridad. Para estancias de varios días, compruebe regularmente el nivel del agua, ya que el calor y el uso de la piscina pueden hacer que baje rápidamente. El agua debe permanecer siempre por encima del tornillo central indicado por la flecha roja en la foto. Añada agua si es necesario. La piscina no está climatizada."
+      },
+      "photo": "piscinebas.jpg"
+    },
+    {
+      "icone": "❄️",
+      "titre": {
+        "fr": "Climatisation",
+        "en": "Air conditioning",
+        "es": "Aire acondicionado"
+      },
+      "texte": {
+        "fr": "La climatisation permet de produire du froid ou du chaud. Appuyez sur MODE : une flèche se déplace en haut de l’écran et indique, grâce au pictogramme correspondant, le mode sélectionné (froid ou chaud). Utilisez ensuite les flèches pour régler la température souhaitée.",
+        "en": "The air conditioning system can provide cool or warm air. Press MODE: an arrow moves across the top of the screen and points to the icon corresponding to the selected mode (cooling or heating). Then use the arrows to set the desired temperature.",
+        "es": "El aire acondicionado permite producir aire frío o caliente. Pulse MODE: una flecha se desplaza por la parte superior de la pantalla e indica, mediante el icono correspondiente, el modo seleccionado (frío o calor). A continuación, utilice las flechas para ajustar la temperatura deseada."
+      },
+      "photo": "climbas.jpg"
+    },
+    {
+      "icone": "🚪",
+      "titre": {
+        "fr": "Fermeture de la porte d'entrée",
+        "en": "Locking the entrance door",
+        "es": "Cierre de la puerta de entrada"
+      },
+      "texte": {
+        "fr": "Pour verrouiller la porte d’entrée, relevez d’abord la poignée vers le haut, puis tournez la clé. Sans relever la poignée, la porte ne pourra pas être verrouillée.",
+        "en": "To lock the entrance door, first lift the handle upwards, then turn the key. The door cannot be locked unless the handle is lifted first.",
+        "es": "Para cerrar con llave la puerta de entrada, primero levante la manilla hacia arriba y luego gire la llave. La puerta no se podrá cerrar con llave si no levanta primero la manilla."
+      },
+      "photo": "portebas.jpg"
+    }
+  ],
+  "adresses": [
+    {
+      "nom": "",
+      "info": {
+        "fr": "Retrouvez toutes nos recommandations sur une carte Google Maps interactive.\n\n🟧 Orange : consommation (restaurants, bars, boulangeries, etc.)\n\n🟨 Jaune : commerces (supérettes, boutiques…)\n\n🟩 Vert : activités gratuites ou sans obligation d'achat.\n\n🟦 Bleu : activités payantes.\n\n🟥 Rouge : lieux importants autour du logement.",
+        "en": "Find all our recommendations on an interactive Google Maps.\n\n🟧 Orange: food & drink (restaurants, bars, bakeries, etc.)\n\n🟨 Yellow: shops (grocery stores, boutiques, etc.)\n\n🟩 Green: free activities or places with no purchase required.\n\n🟦 Blue: paid activities.\n\n🟥 Red: important places near the accommodation.",
+        "es": "Encuentre todas nuestras recomendaciones en un mapa interactivo de Google Maps.\n\n🟧 Naranja: consumo (restaurantes, bares, panaderías, etc.)\n\n🟨 Amarillo: comercios (supermercados, tiendas, etc.)\n\n🟩 Verde: actividades gratuitas o sin obligación de compra.\n\n🟦 Azul: actividades de pago.\n\n🟥 Rojo: lugares importantes cerca del alojamiento."
+      }
+    }
+  ],
+  "lienMyMaps": "https://www.google.fr/maps/d/viewer?mid=1IRP8Z9X-Z-i2UjjvChP34PW4Fm50M3o&ll=42.789900613224965%2C2.650241999999974&z=10",
   "reglement": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Logement non-fumeur · Fêtes interdites · Merci de respecter le calme après 20 h · Logement pour 6 personnes.\nPour consulter l'ensemble du règlement et les informations détaillées, veuillez vous référer à l'annonce Airbnb.",
+    "en": "Non-smoking accommodation · No parties · Please keep noise to a minimum after 8:00 PM · Accommodation for 6 guests.\nFor the full house rules and detailed information, please refer to the Airbnb listing.",
+    "es": "Alojamiento para no fumadores · Fiestas prohibidas · Por favor, respete el silencio después de las 20:00 · Alojamiento para 6 personas.\nPara consultar todas las normas e información detallada, consulte el anuncio de Airbnb."
   },
   "contactHote": {
-    "fr": "",
-    "en": "",
-    "es": ""
+    "fr": "Contactez votre hôte directement depuis Airbnb.",
+    "en": "Contact your host directly through Airbnb.",
+    "es": "Contacte con su anfitrión directamente a través de Airbnb."
   }
 }
