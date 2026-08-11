@@ -134,6 +134,20 @@
         "es": "Se proporciona un mando a distancia. Pulse el botón A para hacer que el cristal sea opaco o transparente. Esta función le permite mantener su privacidad mientras disfruta de la luz natural que entra por las ventanas de techo."
       },
       "photo": "vitrechantier.jpg"
+    },
+    {
+      "icone": "🚪",
+      "titre": {
+        "fr": "Fermeture de la porte d'entrée",
+        "en": "Locking the entrance door",
+        "es": "Cierre de la puerta de entrada"
+      },
+      "texte": {
+        "fr": "Pour verrouiller la porte d’entrée, relevez d’abord la poignée vers le haut, puis tournez la clé. Sans relever la poignée, la porte ne pourra pas être verrouillée.",
+        "en": "To lock the entrance door, first lift the handle upwards, then turn the key. The door cannot be locked unless the handle is lifted first.",
+        "es": "Para cerrar con llave la puerta de entrada, primero levante la manilla hacia arriba y luego gire la llave. La puerta no se podrá cerrar con llave si no levanta primero la manilla."
+      },
+      "photo": ""
     }
   ],
   "adresses": [
