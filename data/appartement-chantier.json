@@ -115,9 +115,9 @@
         "es": "Usar el televisor"
       },
       "texte": {
-        "fr": "Allumez la télévision, puis ouvrez l'application Molotov pour accéder aux chaînes de télévision classiques. Les services de streaming Netflix, Amazon Prime Video et Disney+ sont également mis à votre disposition.",
-        "en": "Turn on the TV, then open the Molotov app to watch standard TV channels. Streaming services including Netflix, Amazon Prime Video, and Disney+ are also available for your use.",
-        "es": "Encienda el televisor y abra la aplicación Molotov para acceder a los canales de televisión tradicionales. También tiene a su disposición los servicios de streaming Netflix, Amazon Prime Video y Disney+."
+        "fr": "Allumez la télévision, puis ouvrez l'application Molotov pour accéder aux chaînes de télévision classiques. Les services de streaming Netflix et Disney+ sont également mis à votre disposition.",
+        "en": "Turn on the TV, then open the Molotov app to watch standard TV channels. Streaming services including Netflix and Disney+ are also available for your use.",
+        "es": "Encienda el televisor y abra la aplicación Molotov para acceder a los canales de televisión tradicionales. También tiene a su disposición los servicios de streaming Netflix y Disney+."
       },
       "photo": ""
     },
@@ -148,6 +148,20 @@
         "es": "Para cerrar con llave la puerta de entrada, primero levante la manilla hacia arriba y luego gire la llave. La puerta no se podrá cerrar con llave si no levanta primero la manilla."
       },
       "photo": ""
+    },
+    {
+      "icone": "🌡️",
+      "titre": {
+        "fr": "Soufflant de salle de bain",
+        "en": "Bathroom fan heater",
+        "es": "Calefactor de baño"
+      },
+      "texte": {
+        "fr": "Pour utiliser le soufflant de la salle de bain, vérifiez d’abord qu’il est sous tension. L’écran doit normalement afficher des LED bleues.\n\nSi ce n’est pas le cas, appuyez sur le bouton rouge situé à l’arrière, indiqué par la flèche verte.\n\nAppuyez ensuite sur le bouton noir entouré en rouge pour démarrer le chauffage.\n\nPour l’éteindre, appuyez de nouveau sur le bouton noir et attendez la fin du compte à rebours.",
+        "en": "To use the bathroom fan heater, first make sure it is switched on. The display should normally show blue LED lights.\n\nIf it does not, press the red button on the back, indicated by the green arrow.\n\nThen press the black button circled in red to start the heater.\n\nTo turn it off, press the black button again and wait for the countdown to finish.",
+        "es": "Para utilizar el calefactor del baño, compruebe primero que esté encendido. La pantalla debería mostrar normalmente luces LED azules.\n\nSi no es así, pulse el botón rojo situado en la parte trasera, indicado por la flecha verde.\n\nA continuación, pulse el botón negro rodeado en rojo para encender la calefacción.\n\nPara apagarlo, vuelva a pulsar el botón negro y espere a que termine la cuenta atrás."
+      },
+      "photo": "soufflantchantier.jpg"
     }
   ],
   "adresses": [
